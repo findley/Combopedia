@@ -25,6 +25,8 @@ var Gamepad = function() {
 								'height': AIMING_CIRCLE_HEIGHT,
 								'position': 'relative',
 								'margin': 15,
+								'-webkit-border-radius': 100,
+								'-moz-border-radius': 100,
 							});
 		
 		if (DEBUG == true) aimingCircle.css('border', '1px solid blue');
@@ -95,7 +97,7 @@ var Gamepad = function() {
 					.draggable({
 						'revert': 'invalid',
 						'revertDuration': 80,
-						'containment': '.aimingCircleBuffer',
+						'containment': 'parent',
 					});
 		
 		positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
