@@ -1,0 +1,7 @@
+.position {
+	background-color: white;
+}
+
+.position.active {
+	background-color: yellow;
+}
