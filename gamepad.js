@@ -1,4 +1,6 @@
 var Gamepad = function() {
+	this.inputQueue = [];
+
 	var DEBUG = true;
 
 	// TODO: make this an object
@@ -85,7 +87,7 @@ var Gamepad = function() {
 	var KNOB_WIDTH = 40;
 	var KNOB_HEIGHT = 40;
 	
-	var Knob = function() {
+	var Knob = function(inputQueue) {
 		var knob = $('<div>')
 					.addClass('knob')
 					.css({
@@ -102,6 +104,14 @@ var Gamepad = function() {
 		
 		positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
 		
+		// when clicked, return to neutral position
+		knob.on('click', function() {
+			inputQueue.length = 0;
+			positionNumpadElt($(this), KNOB_WIDTH, KNOB_HEIGHT, 5);
+
+		});
+		
+		
 		if (DEBUG == true) knob.css('border', '1px solid green');
 		
 		return knob;	
@@ -113,7 +123,7 @@ var Gamepad = function() {
 	var POS_WIDTH = 30;
 	var POS_HEIGHT = 30;
 	
-	var Position = function(num) {
+	var Position = function(num, inputQueue) {
 		var pos = $('<div>')
 				.addClass('position')
 				.css({
@@ -131,7 +141,13 @@ var Gamepad = function() {
 			drop: function(e, ui) {
 				$(ui.draggable).css({border: '1px dotted green'});
 				positionNumpadElt($(ui.draggable), KNOB_WIDTH, KNOB_HEIGHT, num);
-			}
+			},
+			over: function(e, ui) {
+				if (num != 5 && inputQueue[inputQueue.length-1] != num) {
+					inputQueue.push(num);
+					console.log(inputQueue);
+				}
+			},
 		});
 		
 		return pos;
@@ -142,9 +158,9 @@ var Gamepad = function() {
 	// place the components in the gamepad
 	gamepad.append(aimingCircle);
 
-	aimingCircle.append(new Knob());
+	aimingCircle.append(new Knob(this.inputQueue));
 	for (var i = 1; i <10; i++) {
-		aimingCircle.append(new Position(i));
+		aimingCircle.append(new Position(i, this.inputQueue));
 	}	
 
 	return gamepad;
