@@ -1,0 +1,149 @@
+var Gamepad = function() {
+	var DEBUG = true;
+
+	// TODO: make this an object
+	var gamepad = $('<div id="gamepad">')
+					.css({
+						'border': '1px solid red',
+						'width': 500,
+						'height': 450,
+						'position': 'relative',
+						'padding': 10,
+					});
+	
+	
+
+	
+	// The joystick controls of the gamepad
+	var AIMING_CIRCLE_WIDTH = 200;
+	var AIMING_CIRCLE_HEIGHT = 200;
+	
+	var AimingCircle = function() {
+		var aimingCircle = $('<div>')
+							.css({
+								'width': AIMING_CIRCLE_WIDTH,
+								'height': AIMING_CIRCLE_HEIGHT,
+								'position': 'relative',
+								'margin': 15,
+							});
+		
+		if (DEBUG == true) aimingCircle.css('border', '1px solid blue');
+		
+		return aimingCircle;
+	};
+
+	// Instantiate aiming circle for knob/position placement
+	var aimingCircle = new AimingCircle();
+	
+	// Position the element in the aiming circle using numpad notation
+	// eg. 5 goes in the center, 9 goes in the top right
+	var positionNumpadElt = function(elt, width, height, num) {
+		switch(num)
+		{
+			case 1:
+				elt.css('top', aimingCircle.height() - width)
+				   .css('left', 0);
+				break;
+			case 2:
+				elt.css('top', aimingCircle.height() - height)
+				   .css('left', aimingCircle.width()/2 - width/2);
+				break;
+			case 3:
+				elt.css('top', aimingCircle.height() - height)
+				   .css('left', aimingCircle.width() - width);
+				break;
+			case 4:
+				elt.css('top', aimingCircle.height()/2 - height/2)
+				   .css('left', 0);
+				break;
+			case 5:
+				elt.css('top', aimingCircle.height()/2 - height/2)
+				   .css('left', aimingCircle.width()/2 - width/2);
+				break;
+			case 6:
+				elt.css('top', aimingCircle.height()/2 - height/2)
+				   .css('left', aimingCircle.width() - width);
+				break;
+			case 7:
+				elt.css('top', 0)
+				   .css('left', 0);
+				break;
+			case 8:
+				elt.css('top', 0)
+				   .css('left', aimingCircle.width()/2 - width/2);
+				break;
+			case 9:
+				elt.css('top', 0)
+				   .css('left', aimingCircle.width() - width);
+				break;				
+		}
+	};
+	
+	// The movable knob of the joystick controls
+	var KNOB_WIDTH = 40;
+	var KNOB_HEIGHT = 40;
+	
+	var Knob = function() {
+		var knob = $('<div>')
+					.addClass('knob')
+					.css({
+						'position': 'absolute',
+						'width': KNOB_WIDTH,
+						'height': KNOB_HEIGHT,
+						'z-index': 10,
+					})
+					.draggable({
+						'revert': 'invalid',
+						'revertDuration': 80,
+						'containment': '.aimingCircleBuffer',
+					});
+		
+		positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
+		
+		if (DEBUG == true) knob.css('border', '1px solid green');
+		
+		return knob;	
+	};
+
+	
+	// The directional indicators of the joystick controls
+	// Placement is initialized with numpad direction placement
+	var POS_WIDTH = 30;
+	var POS_HEIGHT = 30;
+	
+	var Position = function(num) {
+		var pos = $('<div>')
+				.addClass('position')
+				.css({
+					'position': 'absolute',
+					'width': POS_WIDTH,
+					'height': POS_HEIGHT,
+				});
+		
+		positionNumpadElt(pos, POS_WIDTH, POS_HEIGHT, num);
+		pos.text(num);
+		
+		if (DEBUG == true) pos.css('border', '1px solid purple');
+		
+		pos.droppable({
+			drop: function(e, ui) {
+				$(ui.draggable).css({border: '1px dotted green'});
+				positionNumpadElt($(ui.draggable), KNOB_WIDTH, KNOB_HEIGHT, num);
+			}
+		});
+		
+		return pos;
+	};
+	
+
+	
+	// place the components in the gamepad
+	gamepad.append(aimingCircle);
+
+	aimingCircle.append(new Knob());
+	for (var i = 1; i <10; i++) {
+		aimingCircle.append(new Position(i));
+	}	
+
+	return gamepad;
+}
