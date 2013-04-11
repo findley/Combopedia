@@ -136,6 +136,7 @@ var Gamepad = function() {
 		return knob;	
 	};
 
+	var knob = new Knob(this.inputQueue);
 	
 	// The directional indicators of the joystick controls
 	// Placement is initialized with numpad direction placement
@@ -171,6 +172,12 @@ var Gamepad = function() {
 				}
 			},
 		});
+
+		if (num == 5) {
+			pos.click(function() {
+				positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
+			});
+		}
 		
 		return pos;
 	};
@@ -189,7 +196,7 @@ var Gamepad = function() {
 	
 	// place the components in the gamepad
 	gamepad.append(aimingCircle);
-	aimingCircle.append(new Knob(this.inputQueue));
+	aimingCircle.append(knob);
 	for (var i = 1; i <10; i++) {
 		aimingCircle.append(new Position(i, this.inputQueue));
 	}	
