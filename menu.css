@@ -30,8 +30,16 @@ table{
 	min-height:470px;
 }
 
+#allchars{
+	font-weight: bold;
+}
+
 #data{
 	width:100%;
+}
+
+#comboCol{
+	width:22%;
 }
 
 #bottomBar{

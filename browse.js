@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 var ComboData = function() {};
 
-ComboData.attributes = ['name', 'character', 'type', 'damage', 'meterGain', 'meterDrain', 'difficulty', 'favorite'];
+ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGain', 'meterDrain', 'difficulty', 'favorite'];
 
 ComboData.initTable = function() {
 	var dataRow = $('<tr>');
@@ -60,9 +60,11 @@ ComboData.fillComboData = function() {
 		var dataRow = $('<tr>');
 		for (var j = 0; j < ComboData.attributes.length; j++) {
 			var attribute = ComboData.attributes[j];
-			
-			dataRow.append($('<td>').text(combo[attribute]));
-			
+			if(attribute=="combo"){
+				dataRow.append($('<td id="comboCol">').text(combo[attribute]));
+			} else{
+				dataRow.append($('<td>').text(combo[attribute]));
+			}
 			
 		}
 		$('#data').append(dataRow);
