@@ -44,14 +44,5 @@ table{
 
 #bottomBar{
 	position:relative;
-	border:solid 2px black;
-	top:2px;
-	left:18%;
-	width:75%;
-	padding:8px;
-}
-
-#bottomBar input{
-	position:relative;
-	left:70%;
+	width:100%;
 }
