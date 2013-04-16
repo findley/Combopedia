@@ -6,19 +6,6 @@ table{
 	position:relative;
 	top:10%;
 }
-
-/* #characters{
-	position:absolute;
-	left:3%;
-	width:15%;
-}
-
-#characters td{
-	text-align: right;
-	border:solid 5px black;
-	padding: 4px;
-}
- */
  
 #dataSurround{
 	border:solid 5px black;
