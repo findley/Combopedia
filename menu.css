@@ -33,3 +33,12 @@ table{
 	position:relative;
 	width:100%;
 }
+
+#topRow{
+	padding:30px;
+}
+
+#comboFormHeading{
+	font-size: 3em;
+	padding:20px;
+}
