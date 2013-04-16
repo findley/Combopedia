@@ -146,6 +146,8 @@ ComboData.fillComboData = function(charac) {
 		
 	}
 
+
+	$('#data').tablesorter();
 };
 	
 	
