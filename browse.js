@@ -12,6 +12,8 @@ $(document).ready(function() {
 
 	ComboData.initTable();
 	ComboData.fillComboData();
+	$("#data").tablesorter(); 
+
 });
 
 
@@ -20,14 +22,15 @@ var ComboData = function() {};
 ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGain', 'meterDrain', 'difficulty', 'favorite'];
 
 ComboData.initTable = function() {
-	$('#data').html("");
+	$('#data').html("<thead>");
+
 	var dataRow = $('<tr>');
 	for (var j = 0; j < ComboData.attributes.length; j++) {
 		var attribute = ComboData.attributes[j];
 		var capitalized = attribute.charAt(0).toUpperCase() + attribute.slice(1);
 		dataRow.append($('<th>').text(capitalized));
 	}
-	$('#data').append(dataRow);
+	$('#data thead').append(dataRow);
 };
 		
 ComboData.fillComboData = function(charac) {
@@ -118,7 +121,13 @@ ComboData.fillComboData = function(charac) {
 
 	for (var i = 0; i < comboData.length; i++) {
 		var combo = comboData[i];
+
+		if(i==0){
+			$('#data').append($('<tbody>'));
+		}
+			
 		var dataRow = $('<tr>');
+
 		for (var j = 0; j < ComboData.attributes.length; j++) {
 			var attribute = ComboData.attributes[j];
 
@@ -132,7 +141,7 @@ ComboData.fillComboData = function(charac) {
 			}
 			
 		}
-		$('#data').append(dataRow);
+		$('#data tbody').append(dataRow);
 		
 		
 	}
