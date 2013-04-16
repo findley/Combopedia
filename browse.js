@@ -2,6 +2,13 @@ $(document).ready(function() {
 
 	prevHighlight = "allchars";
 
+	$('#searchBar').keypress(function (e) {
+  		if (e.which == 13) {
+    		document.getElementById('searchBar').value="";
+  		}
+
+	});
+
 	$(".side").click(function() {
 		$("#"+prevHighlight).removeClass('active');
 		$("#"+this.id).addClass('active');
