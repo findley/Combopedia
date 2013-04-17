@@ -39,7 +39,6 @@ $(document).ready(function() {
 
 	ComboData.initTable();
 	ComboData.fillComboData();
-	$("#data").tablesorter(); 
 
 });
 
@@ -55,10 +54,10 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			character: 'Teddie',
 			combo: ["89632","AB","1"],
 			type: 'jab',
-			damage: 100,
+			damage: 150,
 			meterGain: 50,
-			meterDrain: 20,
-			difficulty: 3,
+			meterDrain: 80,
+			difficulty: 1/5,
 			favorite: false, 
 		},
 		{
@@ -67,9 +66,9 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
-			meterGain: 50,
-			meterDrain: 20,
-			difficulty: 3,
+			meterGain: 90,
+			meterDrain: 30,
+			difficulty: 1/5,
 			favorite: false,		
 		},
 		{
@@ -77,10 +76,10 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			character: 'Aigis',
 			combo: ["89632","AB","1"],
 			type: 'jab',
-			damage: 100,
-			meterGain: 50,
+			damage: 240,
+			meterGain: 10,
 			meterDrain: 20,
-			difficulty: 3,
+			difficulty: 2/5,
 			favorite: false,		
 		},
 		{
@@ -88,10 +87,10 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			character: 'Yu Narukami',			
 			combo: ["89632","AB","1"],
 			type: 'jab',
-			damage: 100,
-			meterGain: 50,
-			meterDrain: 20,
-			difficulty: 3,
+			damage: 760,
+			meterGain: 0,
+			meterDrain: 90,
+			difficulty: 4/5,
 			favorite: false,		
 		},
 		{
@@ -99,10 +98,10 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			character: 'Yosuke Hanamura',
 			combo: ["89632","AB","1"],
 			type: 'jab',
-			damage: 100,
-			meterGain: 50,
-			meterDrain: 20,
-			difficulty: 3,
+			damage: 90,
+			meterGain: 20,
+			meterDrain: 0,
+			difficulty: 1/5,
 			favorite: false,		
 		},
 		{
@@ -110,10 +109,10 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			character: 'Chie Satonaka',
 			combo: ["89632","AB","1"],
 			type: 'jab',
-			damage: 100,
-			meterGain: 50,
-			meterDrain: 20,
-			difficulty: 3,
+			damage: 670,
+			meterGain: 5,
+			meterDrain: 40,
+			difficulty: 3/5,
 			favorite: false,		
 		},
 		{
@@ -121,10 +120,10 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			character: 'Yukiko Amagi',
 			combo: ["89632","AB","1"],
 			type: 'jab',
-			damage: 100,
-			meterGain: 50,
+			damage: 650,
+			meterGain: 5,
 			meterDrain: 20,
-			difficulty: 3,
+			difficulty: 4/5,
 			favorite: false,		
 		},
 		{
@@ -132,10 +131,10 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			character: 'Kanji Tatsumi',
 			combo: ["89632","AB","1"],
 			type: 'jab',
-			damage: 100,
+			damage: 980,
 			meterGain: 50,
 			meterDrain: 20,
-			difficulty: 3,
+			difficulty: 5/5,
 			favorite: false,		
 		},
 	];
