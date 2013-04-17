@@ -118,15 +118,13 @@ var Gamepad = function() {
 		
 		positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
 
-		//TODO: circle containment
-		//var angle = 
-		
+
 		// when clicked, return to neutral position
 		knob.on('click', function() {
-			inputQueue.length = 0;
+			addMove(inputQueue);
 			positionNumpadElt($(this), KNOB_WIDTH, KNOB_HEIGHT, 5);
 			$('.position').removeClass('active');
-
+			inputQueue.length = 0;
 		});
 		
 		
@@ -203,6 +201,13 @@ var Gamepad = function() {
 	gamepad.append(joystickFeedback);
 
 	gamepad.append($('<button type="button" id="addMoveButton">Add Move</button>'));
+	
+	
+	var addMove = function(inputQueue) {
+	console.log(inputQueue);
+		$("#moves").append('<li class="singleMove">'+inputQueue.join('')+'<i class="pull-right icon-trash"></i><i class="pull-right icon-hand-up"></i></li>');
+	}
+
 
 	return gamepad;
 }
