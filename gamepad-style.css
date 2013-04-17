@@ -5,3 +5,15 @@
 .position.active {
 	background-color: yellow;
 }
+
+#pageContainer{
+	position:relative;
+	top:10%;
+}
+
+#moveList{
+	border: 1px solid green;
+	width:500;
+	height:450;
+	padding:10px;
+}

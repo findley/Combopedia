@@ -184,7 +184,7 @@ var Gamepad = function() {
 	
 
 	var JoystickFeedback = function() {
-		var joystickFeedback = $('<div>')
+		var joystickFeedback = $('<div id="joystickFeedback">')
 								.css({
 									'border': '1px solid green',
 									'width': 400,
@@ -201,6 +201,8 @@ var Gamepad = function() {
 		aimingCircle.append(new Position(i, this.inputQueue));
 	}	
 	gamepad.append(joystickFeedback);
+
+	gamepad.append($('<button type="button" id="addMoveButton">Add Move</button>'));
 
 	return gamepad;
 }
