@@ -33,8 +33,10 @@ $(document).ready(function() {
 		ComboData.fillComboData(prevHighlight);
 	});
 
-	$("#data").on("click",'.linkToComboPage',function(){
-		$(location).attr('href',"./fillerComboPage.html");
+	$("#data").on("click",'.linkToComboPage',function(e){
+		if(e.target.className!="icon-star" && e.target.className!="icon-star-empty" && e.target.className!="fav"){
+			$(location).attr('href',"./fillerComboPage.html");
+		}
 	});
 
 	ComboData.initTable();
