@@ -172,12 +172,23 @@ var Gamepad = function() {
 				}
 			},
 		});
+		
+		//TODO: does not position as intended
+		pos.click(function() {
+			inputQueue.length = 0;
+			positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, num);
+			if (num == 5) {
+				inputQueue.length = 0;
+				$('.position').removeClass('active');			
+			} else {
+				pos.addClass('active');
+				inputQueue.push(num);
+				joystickFeedback.text(inputQueue);			
+			}
 
-		if (num == 5) {
-			pos.click(function() {
-				positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
-			});
-		}
+
+		});
+
 		
 		return pos;
 	};
