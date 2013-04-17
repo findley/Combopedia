@@ -1,3 +1,7 @@
+.knob {
+	background-image: url('img/joystick/selected.png');
+}
+
 .position {
 	background-color: white;
 }
@@ -17,3 +21,4 @@
 	height:450;
 	padding:10px;
 }
+
