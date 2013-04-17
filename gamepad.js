@@ -118,15 +118,13 @@ var Gamepad = function() {
 		
 		positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
 
-		//TODO: circle containment
-		//var angle = 
-		
+
 		// when clicked, return to neutral position
 		knob.on('click', function() {
-			inputQueue.length = 0;
+			addMove(inputQueue);
 			positionNumpadElt($(this), KNOB_WIDTH, KNOB_HEIGHT, 5);
 			$('.position').removeClass('active');
-
+			inputQueue.length = 0;
 		});
 		
 		
@@ -189,13 +187,28 @@ var Gamepad = function() {
 
 		});
 
+
+
+		pos.click(function() {
+			positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, num);
+
+			if ( num== 5 ) {
+				$('.active').removeClass('active');
+				inputQueue.length = 0;
+			} else {
+				inputQueue.push(num);
+				pos.addClass('active');
+			}
+			joystickFeedback.text(inputQueue);
+		});
+
 		
 		return pos;
 	};
 	
 
 	var JoystickFeedback = function() {
-		var joystickFeedback = $('<div>')
+		var joystickFeedback = $('<div id="joystickFeedback">')
 								.css({
 									'border': '1px solid green',
 									'width': 400,
@@ -212,6 +225,15 @@ var Gamepad = function() {
 		aimingCircle.append(new Position(i, this.inputQueue));
 	}	
 	gamepad.append(joystickFeedback);
+
+	gamepad.append($('<button type="button" id="addMoveButton">Add Move</button>'));
+	
+	
+	var addMove = function(inputQueue) {
+	console.log(inputQueue);
+		$("#moves").append('<li class="singleMove">'+inputQueue.join('')+'<i class="pull-right icon-trash"></i><i class="pull-right icon-hand-up"></i></li>');
+	}
+
 
 	return gamepad;
 }

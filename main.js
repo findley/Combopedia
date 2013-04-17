@@ -1,6 +1,18 @@
 $(document).ready(function() {
-	$('#container-gamepad').append(new Gamepad());
 
+	gp = new Gamepad();
 
+	$('#container-gamepad').append(gp);
+
+	$("#moves").on("click", '.singleMove', function (e){
+		if(e.target.className=="pull-right icon-trash"){
+			$(this).closest('li').remove();
+		} 
+	});
+
+	//$("#moves").on("mousedown", '.singleMove', function (e){
+		
+	//});
+	$(".singleMove").draggable();
 
 });

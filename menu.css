@@ -6,19 +6,6 @@ table{
 	position:relative;
 	top:10%;
 }
-
-/* #characters{
-	position:absolute;
-	left:3%;
-	width:15%;
-}
-
-#characters td{
-	text-align: right;
-	border:solid 5px black;
-	padding: 4px;
-}
- */
  
 #dataSurround{
 	border:solid 5px black;
@@ -30,20 +17,68 @@ table{
 	min-height:470px;
 }
 
+#allchars{
+	font-weight: bold;
+}
+
 #data{
 	width:100%;
 }
 
-#bottomBar{
-	position:relative;
-	border:solid 2px black;
-	top:2px;
-	left:18%;
-	width:75%;
-	padding:8px;
+.comboCol{
+	width:22%;
+	overflow:hidden;
 }
 
-#bottomBar input{
+#bottomBar{
 	position:relative;
-	left:70%;
+	width:100%;
+}
+
+#topRow{
+	padding:30px;
+}
+
+#comboFormHeading{
+	font-size: 3em;
+	padding:20px;
+}
+
+.imgMoves{
+	display:inline;
+	width:20px;
+	height:20px;
+}
+
+#fillerComboPageContainer{
+	padding:20px;
+}
+
+#fillerPageContentContainer{
+	border: 1px solid black;
+	background-color: #E0E0E0;
+	padding:20px;
+}
+
+.imgDisplay{
+	display:inline;
+	width:40px;
+	height:40px;
+}
+
+.fillerPageBorder{
+	border: 2px solid black;
+	padding:10px;
+}
+
+.topBar{
+	padding:20px;
+}
+
+#fillerMetadata{
+	font-size:2em;
+}
+
+#fillerMetadata div{
+	padding:10px;
 }

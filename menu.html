@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui-1.10.2.custom.min.js"></script>
+<script type="text/javascript" src="external_js/jquery.tablesorter/jquery.tablesorter.min.js"></script>
 <script type="text/javascript" src="browse.js"></script>
 
 </head>
@@ -14,45 +15,6 @@
 <body>
 
 <div id="pageSurround">
-
-<!-- 	<table id="characters">
-		<tr><td>All Characters</td></tr>
-		<tr><td>Yu Narukami</td></tr>
-		<tr><td>Yosuke Hanamura</td></tr>
-		<tr><td>Chie Satonaka</td></tr>
-		<tr><td>Yukiko Amagi</td></tr>
-		<tr><td>Kanji Tatsumi</td></tr>
-		<tr><td>Naoto Shirogane</td></tr>
-		<tr><td>Teddie</td></tr>
-		<tr><td>Aigis</td></tr>
-		<tr><td>Mitsuru Kirijo</td></tr>
-		<tr><td>Akihiko Sanada</td></tr>
-		<tr><td>Labrys</td></tr>
-		<tr><td>Shadow Labrys</td></tr>
-		<tr><td>Elizabeth</td></tr>
-	</table>
-
-	<div id="dataSurround">
-
-		<table id="data">
-			<th>
-				<td>Name</td>
-				<td>Character</td>
-				<td>Type</td>
-				<td>Damage</td>
-				<td>Meter</td>
-				<td>Difficulty</td>
-				<td>Favorite</td>
-			</th>
-		</table>
-
-	</div>
-
-	<div id="bottomBar">
-		<button>New Combo</button>
-		<input type="text" value="Search"></input>
-	</div>
- -->
  
 	<!-- Navigation -->
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -65,9 +27,11 @@
 			  </button>
 			  <a class="brand" href="#">Combopedia</a>
 			  <div class="nav-collapse collapse">
-				<p class="navbar-text pull-right">
-				  Logged in as <a href="#" class="navbar-link">Username</a>
-				</p>
+				<form class="navbar-form pull-right">
+				  <input class "span2" type="text" placeholder="Email">
+				  <input class "span2" type="password" placeholder="Password">
+				  <button type="submit" class="btn">Sign in</button>
+				</form>
 				<ul class="nav">
 				  <li class="active"><a href="#">Home</a></li>
 				  <li><a href="#about">About</a></li>
@@ -89,49 +53,40 @@
 			
 				<div class="well sidebar-nav">
 					<ul class="nav nav-list">
-					  <li class="nav-header">All Characters</li>
-					  <li class="active"><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li class="nav-header">Sidebar</li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li class="nav-header">Sidebar</li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
-					  <li><a href="#">Link</a></li>
+					  <li class="active side" id="allchars"><a href="#">All Characters</a></li>
+					  <li class="side" id="Yu"><a href="#">Yu Narukami</a></li>
+					  <li class="side" id="Yosuke"><a href="#">Yosuke Hanamura</a></li>
+					  <li class="side" id="Chie"><a href="#">Chie Satonaka</a></li>
+					  <li class="side" id="Yukiko"><a href="#">Yukiko Amagi</a></li>
+					  <li class="side" id="Kanji"><a href="#">Kanji Tatsumi</a></li>
+					  <li class="side" id="Naoto"><a href="#">Naoto Shirogane</a></li>
+					  <li class="side" id="Teddie"><a href="#">Teddie</a></li>
+					  <li class="side" id="Aigis"><a href="#">Aigis</a></li>
+					  <li class="side" id="Mitsuru"><a href="#">Mitsuru Kirijo</a></li>
+					  <li class="side" id="Akihiko"><a href="#">Akihiko Sanada</a></li>
+					  <li class="side" id="Labrys"><a href="#">Labrys</a></li>
+					  <li class="side" id="Shadow"><a href="#">Shadow Labrys</a></li>
+					  <li class="side" id="Elizabeth"><a href="#">Elizabeth</a></li>
 					</ul>
 				</div><!--/.well -->
-			
-				<table id="characters" class="table">
-					<tr><td>All Characters</td></tr>
-					<tr><td>Yu Narukami</td></tr>
-					<tr><td>Yosuke Hanamura</td></tr>
-					<tr><td>Chie Satonaka</td></tr>
-					<tr><td>Yukiko Amagi</td></tr>
-					<tr><td>Kanji Tatsumi</td></tr>
-					<tr><td>Naoto Shirogane</td></tr>
-					<tr><td>Teddie</td></tr>
-					<tr><td>Aigis</td></tr>
-					<tr><td>Mitsuru Kirijo</td></tr>
-					<tr><td>Akihiko Sanada</td></tr>
-					<tr><td>Labrys</td></tr>
-					<tr><td>Shadow Labrys</td></tr>
-					<tr><td>Elizabeth</td></tr>
-				</table>
+
 			</div>
 			
 			
 			<!-- Data -->
-			<div class="span7">
-				<table id="data" class="table table-striped table-bordered">
+			<div class="span10">
+				<table id="data" class="table table-striped table-bordered tablesorter">
 				</table>
-			</div><!-- /.span7 -->
+
+				<div class="navbar" id='bottomBar'>
+					<!--<form id="bottomBarForm" action="./comboForm.html">
+						<button type="submit" class="navbar-inner btn">Add New Combo</button>
+                		<input type="text" class="search-query navbar-inner navbar-search pull-right" placeholder="Search" id="searchBar"></input>
+            		</form>-->
+            		<a href="./comboForm.html"><button type="submit" class="navbar-inner btn">Add New Combo</button></a>
+                	<input type="text" class="search-query navbar-inner navbar-search pull-right" placeholder="Search" id="searchBar"></input>
+				</div>
+			</div><!-- /.span10 -->
 		</div><!-- end row fluid --> 
 	</div><!-- /container -->
  
