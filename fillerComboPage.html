@@ -8,6 +8,7 @@
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui-1.10.2.custom.min.js"></script>
 <script type="text/javascript" src="external_js/jquery.tablesorter/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="fillerDiscussion.js"></script>
 </head>
 
 <body>
@@ -40,12 +41,14 @@
 	</div>
 
 	<div class="container-fluid" id="fillerComboPageContainer">
-		<div class="row-fluid topBar">
-			<div class="span1 offset3">
-				<a href="./menu.html">Back</a>
-			</div>
-			<div class="span6">
-				<span style="font-size:3em;">View Example Combo</span>
+		<div class="row-fluid">
+			<div class="span10 offset1 topbar">
+				<div class="span1">
+					<a href="./menu.html">Back</a>
+				</div>
+				<div class="span10" style="text-align:center;">
+					<span style="font-size:3em;">View Example Combo</span>
+				</div>
 			</div>
 		</div>
 
@@ -54,6 +57,12 @@
 				<div class="row-fluid">
 					<div class="span12 fillerPageBorder"><img class='imgDisplay' src="./img/moves/89632.png" />
 												<img class='imgDisplay' src="./img/moves/AB.png" />
+												<img class='imgDisplay' src="./img/moves/236.png" />
+												<img class='imgDisplay' src="./img/moves/4.png" />
+												<img class='imgDisplay' src="./img/moves/AD.png" />
+												<img class='imgDisplay' src="./img/moves/2.png" />
+												<img class='imgDisplay' src="./img/moves/23698.png" />
+												<img class='imgDisplay' src="./img/moves/CD.png" />
 												<img class='imgDisplay' src="./img/moves/1.png" /></div>
 				</div>
 				<div class="row-fluid" style="height:20px;">
@@ -62,7 +71,7 @@
 					<div class="span6 fillerPageBorder" id="fillerMetadata">
 						<div>
 							<span>Name:</span>
-							<span class="span7 pull-right" style="text-align:center;">Super Combo A</span>
+							<span class="span7 pull-right" style="text-align:center;">Mega Kick</span>
 						</div>
 						<div>
 							<span>Character:</span>
@@ -86,11 +95,31 @@
 						</div>
 						<div>
 							<span>Difficulty:</span>
-							<span class="span7 pull-right" style="text-align:center;">Somewhat Difficult</span>
+							<span class="span7 pull-right" style="text-align:center;">4/5</span>
 						</div>
 					</div>
 					<div class="span6 fillerPageBorder">
 						<p>Discussion</p>
+					    <!--<div id="disqus_thread"></div>
+   						<script type="text/javascript">
+        				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        				var disqus_shortname = ''; // required: replace example with your forum shortname
+
+        				/* * * DON'T EDIT BELOW THIS LINE * * */
+        				(function() {
+            				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       					 })();
+    					</script>
+    					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    					<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    					-->
+    					<textarea rows='3' style="width:100%;" id="forumTextArea"></textarea>
+    					<table id="commentTable" class="table table-striped">
+    						<tr id="insertionRow">
+    						</tr>
+    					</table>
 					</div>
 				</div>
 			</div>
