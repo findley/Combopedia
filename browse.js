@@ -33,6 +33,10 @@ $(document).ready(function() {
 		ComboData.fillComboData(prevHighlight);
 	});
 
+	$("#data").on("click",'.linkToComboPage',function(){
+		$(location).attr('href',"./fillerComboPage.html");
+	});
+
 	ComboData.initTable();
 	ComboData.fillComboData();
 	$("#data").tablesorter(); 
@@ -49,6 +53,7 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		{
 			name: 'Super combo A',
 			character: 'Teddie',
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -59,6 +64,7 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		{
 			name: 'Super combo B',
 			character: 'Teddie',
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -69,6 +75,7 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		{
 			name: 'Super combo C',
 			character: 'Aigis',
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -78,7 +85,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		},
 		{
 			name: 'Super combo H',
-			character: 'Yu Narukami',
+			character: 'Yu Narukami',			
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -89,6 +97,7 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		{
 			name: 'Super combo D',
 			character: 'Yosuke Hanamura',
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -99,6 +108,7 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		{
 			name: 'Super combo E',
 			character: 'Chie Satonaka',
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -109,6 +119,7 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		{
 			name: 'Super combo F',
 			character: 'Yukiko Amagi',
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -119,6 +130,7 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 		{
 			name: 'Super combo G',
 			character: 'Kanji Tatsumi',
+			combo: ["89632","AB","1"],
 			type: 'jab',
 			damage: 100,
 			meterGain: 50,
@@ -151,7 +163,7 @@ ComboData.fillComboData = function(charac) {
 			$('#data').append($('<tbody>'));
 		}
 			
-		var dataRow = $('<tr>');
+		var dataRow = $('<tr class="linkToComboPage">');
 
 		for (var j = 0; j < ComboData.attributes.length; j++) {
 			var attribute = ComboData.attributes[j];
@@ -159,7 +171,7 @@ ComboData.fillComboData = function(charac) {
 			var firstName = combo["character"].split(" ")[0];
 			if(charac=="allchars" || charac==firstName){
 				if(attribute=="combo"){
-					dataRow.append($('<td id="comboCol">').text(combo[attribute]));
+					dataRow.append(convertToPicture(combo["combo"]));
 				} else if(attribute=="favorite"){
 					if(combo[attribute]){
 						dataRow.append($('<td class="fav"><i class="icon-star"></i></td>'));
@@ -194,4 +206,12 @@ var dataRow = function() {
 	this.
 
 	return
+}
+
+var convertToPicture = function(listOfMoves){
+	imgMoves = $("<td class='comboCol'>");
+	for (var i = 0; i < listOfMoves.length; i++) {
+		imgMoves.append($("<img class='imgMoves' src=./img/moves/"+listOfMoves[i]+".png />"));
+	}
+	return imgMoves;
 }

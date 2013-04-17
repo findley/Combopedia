@@ -25,8 +25,9 @@ table{
 	width:100%;
 }
 
-#comboCol{
+.comboCol{
 	width:22%;
+	overflow:hidden;
 }
 
 #bottomBar{
@@ -41,4 +42,10 @@ table{
 #comboFormHeading{
 	font-size: 3em;
 	padding:20px;
+}
+
+.imgMoves{
+	display:inline;
+	width:20px;
+	height:20px;
 }

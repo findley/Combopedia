@@ -13,9 +13,12 @@ $(document).ready(function() {
 	$("#moves").on("click", '.singleMove', function (e){
 		if(e.target.className=="pull-right icon-trash"){
 			$(this).closest('li').remove();
-		} else {
-			alert("move")
-		}
+		} 
 	});
+
+	//$("#moves").on("mousedown", '.singleMove', function (e){
+		
+	//});
+	$(".singleMove").draggable();
 
 });
