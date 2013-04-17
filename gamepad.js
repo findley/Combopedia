@@ -171,11 +171,19 @@ var Gamepad = function() {
 			},
 		});
 
-		if (num == 5) {
-			pos.click(function() {
-				positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
-			});
-		}
+
+		pos.click(function() {
+			positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, num);
+
+			if ( num== 5 ) {
+				$('.active').removeClass('active');
+				inputQueue.length = 0;
+			} else {
+				inputQueue.push(num);
+				pos.addClass('active');
+			}
+			joystickFeedback.text(inputQueue);
+		});
 		
 		return pos;
 	};
