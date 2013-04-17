@@ -55,7 +55,9 @@ table{
 }
 
 #fillerPageContentContainer{
-	border: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 	background-color: #E0E0E0;
 	padding:20px;
 }
@@ -72,7 +74,11 @@ table{
 }
 
 .topBar{
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 	padding:20px;
+	background-color:#E0E0E0;
 }
 
 #fillerMetadata{
