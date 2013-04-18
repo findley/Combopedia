@@ -111,6 +111,7 @@ var Gamepad = function() {
 								Knob.position(knob, lastPos);
 							}
 						},
+						'distance': 10,
 					})
 					.append($('<img src="img/joystick/selected.png">'));
 					
@@ -178,7 +179,7 @@ var Gamepad = function() {
 				if (num != 5 && Gamepad.inputQueue[Gamepad.inputQueue.length-1] != num) {
 					Gamepad.inputQueue.push(num);
 					pos.addClass('active');
-					$('#joystickFeedback').text(Gamepad.inputQueue);
+					$('#joystickFeedback').text(Gamepad.inputQueue.join(''));
 				}
 			},
 		});
@@ -196,7 +197,7 @@ var Gamepad = function() {
 				Gamepad.inputQueue.push(num);
 				pos.addClass('active');
 			}
-			$('#joystickFeedback').text(Gamepad.inputQueue);
+			$('#joystickFeedback').text(Gamepad.inputQueue.join(''));
 		});
 
 		
@@ -262,7 +263,7 @@ var Gamepad = function() {
 
 	
 	var JoystickFeedback = function() {
-		var joystickFeedback = $('<div id="joystickFeedback">')
+		var joystickFeedback = $('<textarea id="joystickFeedback">')
 								.css({
 									'width': AIMING_CIRCLE_WIDTH,
 								});
