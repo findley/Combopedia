@@ -30,10 +30,11 @@ var Gamepad = function() {
 								'margin': 15,
 								'-webkit-border-radius': AIMING_CIRCLE_WIDTH/2,
 								'-moz-border-radius': AIMING_CIRCLE_WIDTH/2,
-							});
+							})
+							.attr('id', 'aimingCircle');
 		
 		//if (DEBUG == true) 
-		aimingCircle.css('border', '1px solid blue');
+		//aimingCircle.css('border', '1px solid blue');
 		
 		return aimingCircle;
 	};
@@ -161,7 +162,7 @@ var Gamepad = function() {
 					'position': 'absolute',
 					'width': POS_WIDTH,
 					'height': POS_HEIGHT,
-					'background-image': 'url("img/unselected/' + num + '.png")',
+					//'background-image': 'url("img/unselected/' + num + '.png")',
 					'background-size': POS_WIDTH + 'px ' + POS_HEIGHT + 'px',
 				});
 		

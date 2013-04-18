@@ -10,9 +10,6 @@ $(document).ready(function() {
 		} 
 	});
 
-	//$("#moves").on("mousedown", '.singleMove', function (e){
-		
-	//});
 	$(".singleMove").draggable();
 
 });

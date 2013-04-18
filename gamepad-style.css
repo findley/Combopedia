@@ -2,12 +2,14 @@
 	background-image: url('img/joystick/selected.png');
 }
 
+
+
 .position {
 	background-color: white;
 }
 
 .position.active {
-	background-color: yellow;
+	/*background-color: yellow;*/
 }
 
 #pageContainer{
@@ -20,5 +22,103 @@
 	width:500;
 	height:450;
 	padding:10px;
+}
+
+#aimingCircle {
+	border: 3px solid black;
+}
+
+
+
+/* Joystick positioning */
+
+#position-1 {
+	background-image: url('img/unselected/1.png');
+
+}
+
+#position-1.active {
+	background-image: url('img/selected/1.png');
+
+}
+
+#position-2 {
+	background-image: url('img/unselected/2.png');
+
+}
+
+#position-2.active {
+	background-image: url('img/selected/2.png');
+
+}
+
+#position-3 {
+	background-image: url('img/unselected/3.png');
+
+}
+
+#position-3.active {
+	background-image: url('img/selected/3.png');
+
+}
+
+#position-4 {
+	background-image: url('img/unselected/4.png');
+
+}
+
+#position-4.active {
+	background-image: url('img/selected/4.png');
+
+}
+
+#position-5 {
+	background-image: url('img/unselected/5.png');
+
+}
+
+#position-5.active {
+	background-image: url('img/selected/5.png');
+
+}
+
+#position-6 {
+	background-image: url('img/unselected/6.png');
+
+}
+
+#position-6.active {
+	background-image: url('img/selected/6.png');
+
+}
+
+#position-7 {
+	background-image: url('img/unselected/7.png');
+
+}
+
+#position-7.active {
+	background-image: url('img/selected/7.png');
+
+}
+
+#position-8 {
+	background-image: url('img/unselected/8.png');
+
+}
+
+#position-8.active {
+	background-image: url('img/selected/8.png');
+
+}
+
+#position-9 {
+	background-image: url('img/unselected/9.png');
+
+}
+
+#position-9.active {
+	background-image: url('img/selected/9.png');
+
 }
 
