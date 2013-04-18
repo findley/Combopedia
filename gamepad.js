@@ -7,7 +7,7 @@ var Gamepad = function() {
 	// TODO: make this an object
 	var gamepad = $('<div id="gamepad">')
 					.css({
-						'border': '1px solid red',
+						'border': '1px solid black',
 						'position': 'relative',
 						'padding': 10,
 					});
