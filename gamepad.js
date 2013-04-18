@@ -301,7 +301,7 @@ var Gamepad = function() {
 	});
 
 
-	
+	//TODO: clear input if text area is none
 	var Move = function() {
 		var nums = '';
 		var btns = '';
@@ -310,12 +310,25 @@ var Gamepad = function() {
 		if (Gamepad.btnSel != undefined) 
 			btns = Gamepad.btnSel;
 		
-		var move = $('<li class="singleMove">'+ nums + btns + '<i class="pull-right icon-trash"></i><i class="pull-right icon-hand-up"></i></li>');
+		var move = $('<li class="singleMove"><i class="pull-right icon-trash"></i><i class="pull-right icon-hand-up"></i></li>');
 		
-		move.sortable();
+		
+		
+		var text = $('<div>').addClass('moveText').text(nums + btns);
+		var img = $('<div>')
+				.addClass('moveImg')
+				.append($('<img>').attr('src', 'img/moves/' + nums.trim() + '.png'))
+				.append($('<img>').attr('src', 'img/moves/' + btns.trim() + '.png'));
+		
+		move.append(text);
+		move.append(img);
+		
+//		move.sortable();
 		return move;
 	}
 
+
+	
 	
 	var addMove = function() {
 		if (Gamepad.inputQueue.length > 0 || Gamepad.btnSel != '') {
