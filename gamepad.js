@@ -184,10 +184,9 @@ var Gamepad = function() {
 			},
 		});
 		
-		//TODO: does not position as intended
+		//TODO: will not drag back to 5
 		pos.click(function() {
 			Knob.position(knob, num);
-//			positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, num);
 
 			if ( num== 5 ) {
 				// addMove(inputQueue);
@@ -271,6 +270,11 @@ var Gamepad = function() {
 		joystickFeedback.on('keyup', function() {
 			
 			Gamepad.inputQueue = joystickFeedback.val().split('');
+			var num = Gamepad.inputQueue[Gamepad.inputQueue.length-1];
+			
+			Knob.position(knob, num);
+			$('#position-' + num).addClass('active');
+	
 			console.log(Gamepad.inputQueue);
 		});
 		return joystickFeedback;
