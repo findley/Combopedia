@@ -215,9 +215,27 @@ var Gamepad = function() {
 		return joystickFeedback;
 	}
 	
-	var addMove = function(inputQueue) {
-		$("#moves").append('<li class="singleMove">'+inputQueue.join('')+'<i class="pull-right icon-trash"></i><i class="pull-right icon-hand-up"></i></li>');
+	// Code for being able to add single moves
+	
+	$('#moves').sortable({
+		cursor: 'move',
+	});
+
+
+	
+	var Move = function(inputQueue) {
+		var move = $('<li class="singleMove">'+inputQueue.join('')+'<i class="pull-right icon-trash"></i><i class="pull-right icon-hand-up"></i></li>');
+		
+		move.sortable();
+		return move;
 	}
+
+	
+	var addMove = function(inputQueue) {
+		var move = new Move(inputQueue);
+		$("#moves").append(move);
+	}
+	
 	
 	var joystickFeedback = new JoystickFeedback();
 	
@@ -235,3 +253,5 @@ var Gamepad = function() {
 
 	return gamepad;
 }
+
+
