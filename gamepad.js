@@ -136,7 +136,7 @@ var Gamepad = function() {
 			positionNumpadElt($(this), KNOB_WIDTH, KNOB_HEIGHT, 5);
 			$('.position').removeClass('active');
 			Gamepad.inputQueue.length = 0;
-			$('#joystickFeedback').text('');
+			$('#joystickFeedback').val('');
 		});
 		
 		
@@ -179,7 +179,7 @@ var Gamepad = function() {
 				if (num != 5 && Gamepad.inputQueue[Gamepad.inputQueue.length-1] != num) {
 					Gamepad.inputQueue.push(num);
 					pos.addClass('active');
-					$('#joystickFeedback').text(Gamepad.inputQueue.join(''));
+					$('#joystickFeedback').val(Gamepad.inputQueue.join(''));
 				}
 			},
 		});
@@ -197,7 +197,7 @@ var Gamepad = function() {
 				Gamepad.inputQueue.push(num);
 				pos.addClass('active');
 			}
-			$('#joystickFeedback').text(Gamepad.inputQueue.join(''));
+			$('#joystickFeedback').val(Gamepad.inputQueue.join(''));
 		});
 
 		
@@ -267,6 +267,12 @@ var Gamepad = function() {
 								.css({
 									'width': AIMING_CIRCLE_WIDTH,
 								});
+		//TODO: error handling!
+		joystickFeedback.on('keyup', function() {
+			
+			Gamepad.inputQueue = joystickFeedback.val().split('');
+			console.log(Gamepad.inputQueue);
+		});
 		return joystickFeedback;
 	}
 
@@ -317,7 +323,7 @@ var Gamepad = function() {
 	
 	var resetGamepad = function() {
 		Gamepad.inputQueue = [];
-		$('#joystickFeedback').text('');
+		$('#joystickFeedback').val('');
 		Gamepad.btnSel = '';
 		$('#btnFeedback').text('');
 		Knob.position(knob, 5);
