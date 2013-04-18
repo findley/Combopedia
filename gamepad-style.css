@@ -9,6 +9,10 @@
 	height: 500px;
 }
 
+#gamepad > div {
+	margin: 15px;
+}
+
 .knob {
 	background-image: url('img/joystick/selected.png');
 }
@@ -44,11 +48,12 @@
 #aimingCircle {
 	border: 3px solid black;
 	float: left;
+	position: relative;
 }
 
 #buttonContainer {
-	width: 250px;
-	height: 300px;
+/* 	width: 250px;
+	height: 300px; */
 	margin: 15px;
 	border: 1px solid gray;
 	float: left;
@@ -56,35 +61,76 @@
 }
 
 .gpBtn {
-	width: 100px;
-	height: 100px;
+/* 	width: 100px;
+	height: 100px; */
 	border: 1px solid gray;
 	float: left;
 	margin: 10px;
 	background-size: 100%;
 }
 
+.gpBtn:hover {
+	cursor: pointer;
+}
+
 #btnA {
 	background-image: url('img/unselected/A.png');
+}
+
+#btnA.active {
+	background-image: url('img/selected/A.png');
 }
 
 #btnB {
 	background-image: url('img/unselected/B.png');
 }
 
+#btnB.active {
+	background-image: url('img/selected/B.png');
+}
+
 #btnC {
 	background-image: url('img/unselected/C.png');
+}
+
+#btnC.active {
+	background-image: url('img/selected/C.png');
 }
 
 #btnD {
 	background-image: url('img/unselected/D.png');
 }
 
+#btnD.active {
+	background-image: url('img/selected/D.png');
+}
 
+#addMove {
+	width: 100%;
+	height: 3em;
+}
 
+#gpFeedback {
+	clear: both;
+	width: 100%;
+	height: 100px;
+	border: 1px solid red;
+	padding: 1px;
+}
+
+#gpFeedback > div {
+	margin: 15px;
+	height: 70px;
+	float: left;
+}
 
 #joystickFeedback {
-	clear: both;
+	border: 1px solid green;
+	
+}
+
+#btnFeedback {
+	border: 1px solid green;
 }
 
 
