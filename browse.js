@@ -214,5 +214,6 @@ var convertToPicture = function(listOfMoves){
 	for (var i = 0; i < listOfMoves.length; i++) {
 		imgMoves.append($("<img class='imgMoves' src=./img/moves/"+listOfMoves[i]+".png />"));
 	}
+	imgMoves.append($("<p></p><span>"+listOfMoves+"</span>"));
 	return imgMoves;
 }
