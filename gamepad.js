@@ -307,9 +307,11 @@ var Gamepad = function() {
 
 	
 	var addMove = function() {
-		var move = new Move();
-		$("#moves").append(move);
-		resetGamepad();
+		if (Gamepad.inputQueue.length > 0 || Gamepad.btnSel != '') {
+			var move = new Move();
+			$("#moves").append(move);
+			resetGamepad();
+		}
 	}
 	
 	var resetGamepad = function() {
