@@ -28,6 +28,20 @@
 	border: 3px solid black;
 }
 
+#moves {
+	list-style-type: none;
+}
+
+.singleMove {
+	border: 1px solid #999;
+	margin: 10px;
+	padding: 5px;
+}
+
+.singleMove:hover {
+	cursor: pointer;
+	border: 1px solid #C99;
+}
 
 
 /* Joystick positioning */

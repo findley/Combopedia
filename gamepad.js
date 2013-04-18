@@ -133,7 +133,8 @@ var Gamepad = function() {
 
 		// when clicked, return to neutral position
 		knob.on('click', function() {
-			addMove(inputQueue);
+			if (inputQueue.length == 0) addMove([5])
+			else addMove(inputQueue);
 			positionNumpadElt($(this), KNOB_WIDTH, KNOB_HEIGHT, 5);
 			$('.position').removeClass('active');
 			inputQueue.length = 0;
