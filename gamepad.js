@@ -7,8 +7,6 @@ var Gamepad = function() {
 	var gamepad = $('<div id="gamepad">')
 					.css({
 						'border': '1px solid red',
-						'width': 500,
-						'height': 450,
 						'position': 'relative',
 						'padding': 10,
 					});
@@ -22,7 +20,7 @@ var Gamepad = function() {
 	var AIMING_CIRCLE_OFFSET = 30;
 	
 	var AimingCircle = function() {
-		var aimingCircle = $('<div>')
+		var aimingCircle = $('<div class="span4">')
 							.css({
 								'width': AIMING_CIRCLE_WIDTH,
 								'height': AIMING_CIRCLE_HEIGHT,
@@ -216,6 +214,44 @@ var Gamepad = function() {
 		return joystickFeedback;
 	}
 	
+	// button inputs
+	var buttonContainer = $('<div>')
+							.attr('id', 'buttonContainer');
+							
+	
+	
+	var btnA = $('<div>')
+				.attr('id', 'btnA')
+				.addClass('gpBtn');
+
+	var btnB = $('<div>')
+				.attr('id', 'btnB')
+				.addClass('gpBtn');
+					
+	var btnC = $('<div>')
+				.attr('id', 'btnC')
+				.addClass('gpBtn');
+					
+	var btnD = $('<div>')
+				.attr('id', 'btnD')
+				.addClass('gpBtn');
+				
+	$('.gpBtn').click(function() {
+		console.log('h');
+		console.log($(this).attr('id')[$(this).attr('id').length-1]);
+	});
+	
+					
+					
+					
+					
+	buttonContainer.append(btnA);
+	buttonContainer.append(btnB);
+	buttonContainer.append(btnC);
+	buttonContainer.append(btnD);
+
+	
+	
 	// Code for being able to add single moves
 	
 	$('#moves').sortable({
@@ -242,6 +278,7 @@ var Gamepad = function() {
 	
 	// place the components in the gamepad
 	gamepad.append(aimingCircle);
+	gamepad.append(buttonContainer);
 	aimingCircle.append(knob);
 	for (var i = 1; i <10; i++) {
 		aimingCircle.append(new Position(i, this.inputQueue));

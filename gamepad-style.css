@@ -1,11 +1,28 @@
+#container-gamepad {
+	width: 700px;
+	height: 400px;
+	float: left;
+}
+
+#gamepad {
+	width: 650px;
+	height: 500px;
+}
+
 .knob {
 	background-image: url('img/joystick/selected.png');
 }
 
-
+.knob:hover {
+	cursor: pointer;
+}
 
 .position {
 	background-color: white;
+}
+
+.position:hover {
+	cursor: pointer;
 }
 
 .position.active {
@@ -26,6 +43,57 @@
 
 #aimingCircle {
 	border: 3px solid black;
+	float: left;
+}
+
+#buttonContainer {
+	width: 250px;
+	height: 300px;
+	margin: 15px;
+	border: 1px solid gray;
+	float: left;
+	padding: 5px;
+}
+
+.gpBtn {
+	width: 100px;
+	height: 100px;
+	border: 1px solid gray;
+	float: left;
+	margin: 10px;
+	background-size: 100%;
+}
+
+#btnA {
+	background-image: url('img/unselected/A.png');
+}
+
+#btnB {
+	background-image: url('img/unselected/B.png');
+}
+
+#btnC {
+	background-image: url('img/unselected/C.png');
+}
+
+#btnD {
+	background-image: url('img/unselected/D.png');
+}
+
+
+
+
+#joystickFeedback {
+	clear: both;
+}
+
+
+
+
+#moveList {
+	width: 400px;
+	height: 700px;
+	float: left;
 }
 
 #moves {
@@ -42,6 +110,7 @@
 	cursor: pointer;
 	border: 1px solid #C99;
 }
+
 
 
 /* Joystick positioning */
