@@ -6,7 +6,7 @@
 
 #gamepad {
 	width: 650px;
-	height: 500px;
+	height: 550px;
 }
 
 #gamepad > div {
@@ -103,9 +103,14 @@
 	background-image: url('img/selected/D.png');
 }
 
+#clearMove {
+	width: 30%;
+	float: left;
+}
+
 #addMove {
-	width: 100%;
-	height: 3em;
+	width: 30%;
+	float: right;
 }
 
 #gpFeedback {
@@ -136,7 +141,12 @@
 	border: 1px solid black;
 }
 
-
+#numImage, #btnImage {
+    height: 75px;
+    width: 75px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
 
 
 #moveList {
