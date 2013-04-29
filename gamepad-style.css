@@ -202,62 +202,72 @@
 
 #position-1 {
 	background-image: url('img/unselected/1.png');
-
 }
 
 #position-1.active {
 	background-image: url('img/selected/1.png');
+}
 
+#position-1.deactive {
+	background-image: url('img/deactive/1.png');
 }
 
 #position-2 {
 	background-image: url('img/unselected/2.png');
-
 }
 
 #position-2.active {
 	background-image: url('img/selected/2.png');
+}
 
+#position-2.deactive {
+	background-image: url('img/deactive/2.png');
 }
 
 #position-3 {
 	background-image: url('img/unselected/3.png');
-
 }
 
 #position-3.active {
 	background-image: url('img/selected/3.png');
+}
 
+#position-3.deactive {
+	background-image: url('img/deactive/3.png');
 }
 
 #position-4 {
 	background-image: url('img/unselected/4.png');
-
 }
 
 #position-4.active {
 	background-image: url('img/selected/4.png');
+}
 
+#position-4.deactive {
+	background-image: url('img/deactive/4.png');
 }
 
 #position-5 {
 	background-image: url('img/unselected/5.png');
-
 }
 
 #position-5.active {
 	background-image: url('img/selected/5.png');
 
 }
+#position-5.deactive {
+	background-image: url('img/deactive/5.png');
+}
 
 #position-6 {
 	background-image: url('img/unselected/6.png');
-
 }
-
 #position-6.active {
 	background-image: url('img/selected/6.png');
-
+}
+#position-6.deactive {
+	background-image: url('img/deactive/6.png');
 }
 
 #position-7 {
@@ -268,6 +278,9 @@
 #position-7.active {
 	background-image: url('img/selected/7.png');
 
+}
+#position-7.deactive {
+	background-image: url('img/deactive/7.png');
 }
 
 #position-8 {
@@ -280,13 +293,18 @@
 
 }
 
+#position-8.deactive {
+	background-image: url('img/deactive/8.png');
+}
+
 #position-9 {
 	background-image: url('img/unselected/9.png');
-
 }
 
 #position-9.active {
 	background-image: url('img/selected/9.png');
-
 }
 
+#position-9.deactive {
+	background-image: url('img/deactive/9.png');
+}
