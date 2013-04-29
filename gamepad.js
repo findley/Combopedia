@@ -341,7 +341,7 @@ var Gamepad = function() {
 		if (VALID_JOYSTICK.indexOf(nums) == -1)
 		    return;
 		
-		var move = $('<li class="singleMove"><i class="pull-right icon-trash"></i><i class="pull-right icon-hand-up"></i></li>');
+		var move = $('<li class="singleMove"><i class="pull-right icon-trash"></i></li>');
 		
 		var text = $('<div>').addClass('moveText').text(nums + btns);
 		var img = $('<div>').addClass('moveImg');
@@ -426,8 +426,10 @@ var Gamepad = function() {
             else
                 $('#numImage').attr('src', 'img/moves/5.png');
             $('#numImage').css({'border-color' : 'black'});        
+            $('#addMove').removeClass('disabled');            
         } else {
-            $('#numImage').css({'border-color' : 'red'});        
+            $('#numImage').css({'border-color' : 'red'});
+            $('#addMove').addClass('disabled');            
         }
         
 		if (VALID_BUTTON.indexOf(btns) >= 0) {
@@ -439,6 +441,7 @@ var Gamepad = function() {
         } else {
             $('#btnImage').css({'border-color' : 'red'});
         }
+        
     	
     	
 	};
