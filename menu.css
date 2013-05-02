@@ -2,6 +2,10 @@ table{
 	border-collapse: collapse;
 }
 
+#data tbody tr:hover td, #data tbody tr:hover th {
+    background-color: #FFFF99;
+}
+
 #pageSurround{
 	position:relative;
 	top:10%;

@@ -47,13 +47,13 @@ $(document).ready(function() {
 
 var ComboData = function() {};
 
-ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGain', 'meterDrain', 'difficulty', 'favorite'];
+ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGain', 'meterDrain', 'difficulty', 'favorite'];
 
 	// hard coded json data that would otherwise come from database
 	var comboData = [
 		{
-			name: 'Super combo A',
 			character: 'Teddie',
+			name: 'Super combo A',
 			combo: ["412","AB","1","AD","5","874"],
 			type: 'jab',
 			damage: 150,
@@ -63,8 +63,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			favorite: false, 
 		},
 		{
-			name: 'Super combo B',
 			character: 'Teddie',
+			name: 'Super combo B',
 			combo: ["236","C","1","236"],
 			type: 'kick',
 			damage: 100,
@@ -74,8 +74,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			favorite: false,		
 		},
 		{
-			name: 'Super combo C',
 			character: 'Aigis',
+			name: 'Super combo C',
 			combo: ["89632","ABD","7"],
 			type: 'basic',
 			damage: 240,
@@ -85,8 +85,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			favorite: false,		
 		},
 		{
-			name: 'Super combo H',
-			character: 'Yu Narukami',			
+			character: 'Yu Narukami',	
+			name: 'Super combo H',		
 			combo: ["7","21478","ABC","A","1","BC"],
 			type: 'jab',
 			damage: 760,
@@ -96,8 +96,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			favorite: false,		
 		},
 		{
-			name: 'Super combo D',
 			character: 'Yosuke Hanamura',
+			name: 'Super combo D',
 			combo: ["CD","3","89632",],
 			type: 'kick',
 			damage: 90,
@@ -107,8 +107,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			favorite: false,		
 		},
 		{
-			name: 'Super combo E',
 			character: 'Chie Satonaka',
+			name: 'Super combo E',
 			combo: ["89632","D","9","2369874"],
 			type: 'jab',
 			damage: 670,
@@ -118,8 +118,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			favorite: false,		
 		},
 		{
-			name: 'Super combo F',
 			character: 'Yukiko Amagi',
+			name: 'Super combo F',
 			combo: ["89632","AB","5"],
 			type: 'basic',
 			damage: 650,
@@ -129,8 +129,8 @@ ComboData.attributes = ['name', 'character', 'combo', 'type', 'damage', 'meterGa
 			favorite: false,		
 		},
 		{
-			name: 'Super combo G',
 			character: 'Kanji Tatsumi',
+			name: 'Super combo G',
 			combo: ["89632","AB","2","236","23698","CD","AB"],
 			type: 'special',
 			damage: 980,
@@ -191,7 +191,7 @@ ComboData.fillComboData = function(charac) {
 	}
 
 
-	$('#data').tablesorter();
+	$('#data').tablesorter({ headers: { 2:{sorter:false} } });
 };
 	
 	
