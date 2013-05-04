@@ -179,7 +179,14 @@ ComboData.fillComboData = function(charac) {
 					} else{
 						dataRow.append($('<td class="fav"><i class="icon-star-empty"></i></td>'));
 					}
-				} else{
+				} else if(attribute=="difficulty"){
+					elem = "<td>";
+					for(var k=0; k<parseInt(combo[attribute][0]); k++){
+						elem = elem + "<i class='icon-fire'></i>";
+					}
+					elem = elem + "</td>";
+					dataRow.append($(elem));
+				}else{
 					dataRow.append($('<td>').text(combo[attribute]));
 				}
 			}
