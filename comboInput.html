@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Combopedia - Enter Your Combo</title>
+<script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="external_js/jquery-ui-1.10.2.custom.min.js"></script>
+<!-- Load style sheets -->
+<link rel="stylesheet" type="text/css" href="css/gamepad-style.css" />
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/comboForm.css" />
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+<link rel="stylesheet" type="text/css" href="css/comboInput.css" />
+<!-- Load any supplemental Javascript libraries here -->
+
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="js/gamepad.js"></script>
+<script type="text/javascript" src="js/comboInput.js"></script>
+<script type="text/javascript" src="js/comboForm.js"></script>
+
+</head>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+			  <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="brand" href="./menu.html"><img src="img/logo/logo.png" style="max-height: 25px;"/></a>
+			  <div class="nav-collapse collapse">
+				<form class="navbar-form pull-right">
+				  <input class="span2" type="text" placeholder="Email">
+				  <input class="span2" type="password" placeholder="Password">
+				  <button type="submit" class="btn">Sign in</button>
+				</form>
+			  </div><!--/.nav-collapse -->
+			</div>
+		</div>
+	</div>
+	
+	
+<div class='container-fluid' id="pageContainer" style='padding-top:60px;'>
+	<div class='row-fluid'>
+		<div class="span1"></div>
+		<div id="inputCarousel" class="carousel slide span10">
+			<ol class="carousel-indicators">
+				<li data-target="#inputCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#inputCarousel" data-slide-to="1"></li>
+				<li data-target="#inputCarousel" data-slide-to="2"></li>
+			</ol>
+			
+			<div class="carousel-inner" id="inputCarouselInner">
+			
+				<!-- Combo data -->
+				<div class="active item" id="comboData">
+					<h2>Combo Data</h2>
+					<form class="form-horizontal" id="metaDataForm">
+						<div class="control-group">
+							<label class="control-label">Combo Name</label>
+							<div class="controls">
+								<input type="text" placeholder="Name" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Character</label>
+							<div class="controls">
+								<select>
+									<option>Aigis</option>
+									<option>Akihiko Sanada</option>
+									<option>Chie Satonaka</option>
+									<option>Elizabeth</option>
+									<option>Kanji Tatsumi</option>
+									<option>Labrys</option>
+									<option>Mitsuru Kirijo</option>
+									<option>Naoto Shirogane</option>
+									<option>Shadow Labrys</option>
+									<option>Teddie</option>
+									<option>Yosuke Hanamura</option>
+									<option>Yu Narukami</option>
+									<option>Yukiko Amagi</option>
+								</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Type</label>
+							<div class="controls">
+								<select>
+									<option>Kick</option>
+									<option>Jab</option>
+									<option>Basic</option>
+						  <option>Special</option>
+						  <option>Punch</option>
+								</select>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Damage</label>
+							<div class="controls">
+								<input type="text" class="input-small" placeholder="Damage" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Meter Gain</label>
+							<div class="controls">
+								<input type="text" class="input-small" placeholder="Gain" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Meter Drain</label>
+							<div class="controls">
+								<input type="text" class="input-small" placeholder="Drain" required>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">Difficulty</label>
+							<div class="controls">
+						  <div class="0 star-rating" id="fireRating">
+							<i class="icon-star-empty"></i>
+							<i class="icon-star-empty"></i>
+							<i class="icon-star-empty"></i>
+							<i class="icon-star-empty"></i>
+							<i class="icon-star-empty"></i>
+						  </div>
+							</div>
+						</div>
+					</form>
+					
+					<div id="charImg"></div>
+				
+				</div>
+				
+				<!-- Move Input -->
+				<div class="item" id="moveInput">
+					<h2>Move Input</h2>
+					<h2>Move Input</h2>
+					<h2>Move Input</h2>
+					<h2>Move Input</h2>
+					<h2>Move Input</h2><h2>Move Input</h2>
+
+				</div>
+				
+				<!-- Preview/Confirm Submission -->
+				<div class="item" id="confirmation">
+					<h2>Confirmation</h2>
+					<h2>Confirmation</h2>
+					<h2>Confirmation</h2>
+					<h2>Confirmation</h2>
+					<h2>Confirmation</h2>
+				
+				</div>
+			<!-- Carousel nav -->
+			
+			</div>
+			<a class="carousel-control left" href="#inputCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#inputCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+		
+	</div>
+</div>
+
+</body>
+</html>
