@@ -153,7 +153,8 @@ var Gamepad = function() {
 		}
 		
 		positionNumpadElt(knob, KNOB_WIDTH, KNOB_HEIGHT, 5);
-
+		
+		
 		// when clicked, return to neutral position
 		knob.on('click', function() {
 			positionNumpadElt($(this), KNOB_WIDTH, KNOB_HEIGHT, 5);
@@ -299,12 +300,15 @@ var Gamepad = function() {
 		trash.hover(
 			function() {
 				$($(this).closest('li')).addClass('delHover');
-				console.log('h');
 			},
 			function() {
 				$($(this).closest('li')).removeClass('delHover');		
 			}
 		);
+		
+		trash.click(function() {
+			move.remove();
+		});
 		
 		var text = $('<div>').addClass('moveText').text(nums + btns);
 		var img = $('<div>').addClass('moveImg');
