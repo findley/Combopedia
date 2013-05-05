@@ -300,7 +300,6 @@ var Gamepad = function() {
 	var JoystickFeedback = function() {
 		var joystickFeedback = $('<textarea id="joystickFeedback">')
 								.css({
-									'width': AIMING_CIRCLE_WIDTH,
 								});
 		//TODO: error handling!
 		joystickFeedback.on('keyup', function() {

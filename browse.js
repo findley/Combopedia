@@ -175,14 +175,14 @@ ComboData.fillComboData = function(charac) {
 					dataRow.append(convertToPicture(combo["combo"]));
 				} else if(attribute=="favorite"){
 					if(combo[attribute]){
-						dataRow.append($('<td class="fav"><i class="icon-star"></i></td>'));
+						dataRow.append($('<td class="fav"><i class="icon-heart"></i></td>'));
 					} else{
-						dataRow.append($('<td class="fav"><i class="icon-star-empty"></i></td>'));
+						dataRow.append($('<td class="fav"><i class="icon-heart-empty"></i></td>'));
 					}
 				} else if(attribute=="difficulty"){
 					elem = "<td>";
 					for(var k=0; k<parseInt(combo[attribute][0]); k++){
-						elem = elem + "<i class='icon-fire'></i>";
+						elem = elem + "<i class='icon-star'></i>";
 					}
 					elem = elem + "</td>";
 					dataRow.append($(elem));

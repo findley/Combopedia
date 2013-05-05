@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var rating = 0;
-
+	
 	$("#metaDataForm").submit(function(e){
 		e.preventDefault();
 		$(location).attr('href','./joystick.html');	
