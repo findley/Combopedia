@@ -50,11 +50,11 @@ var Gamepad = function() {
 	}
 
     var numImage = function() {
-        return $('<img id = "numImage" class="img-polaroid">');
+        return $('<div id="numImage"><img class="img-polaroid" /></div>');
     }
     
     var btnImage = function() {
-        return $('<img id = "btnImage" class="img-polaroid">');
+        return $('<div id="btnImage"><img class="img-polaroid" /></div>');
     }
     
 	var addMoveBtn = function() {
@@ -421,22 +421,34 @@ var Gamepad = function() {
     	}
     	
     	if (VALID_JOYSTICK.indexOf(nums) >= 0) {
-            if (nums.length > 0)
-                $('#numImage').attr('src', 'img/moves/' + nums.trim() + '.png');
-            else
-                $('#numImage').attr('src', 'img/moves/5.png');
+            if (nums.length > 0) {
+				var img = $('<img>');
+                img.attr('src', 'img/moves/' + nums.trim() + '.png');
+				$('#numImage').empty().append(img);
+			} else { 
+				var img = $('<img>');
+                img.attr('src', 'img/moves/5.png');
+				$('#numImage').empty().append(img);
+			}
             $('#numImage').css({'border-color' : 'black'});        
             $('#addMove').removeClass('disabled');            
         } else {
             $('#numImage').css({'border-color' : 'red'});
-            $('#addMove').addClass('disabled');            
+			$('#numImage').empty().text('INVALID');
+            $('#addMove').addClass('disabled'); 
         }
         
 		if (VALID_BUTTON.indexOf(btns) >= 0) {
-            if (btns.length > 0)		
-                $('#btnImage').attr('src', 'img/moves/' + btns.trim() + '.png');
-            else
-                $('#btnImage').attr('src', 'img/moves/none.png');
+            if (btns.length > 0) {		
+				var img = $('<img>');
+                img.attr('src', 'img/moves/' + btns.trim() + '.png');
+				$('#btnImage').empty().append(img);
+			}
+            else {
+				var img = $('<img>');
+                img.attr('src', 'img/moves/none.png');
+				$('#btnImage').empty().append(img);
+			}
             $('#btnImage').css({'border-color' : 'black'});
         } else {
             $('#btnImage').css({'border-color' : 'red'});
