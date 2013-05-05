@@ -1,5 +1,8 @@
 /* Breadcrumbs */
 
+#inputProgressWrapper {
+	min-width: 830px;
+}
 
 #inputProgress {
 	padding-top: 10px;
@@ -19,8 +22,8 @@
 	 float: left;
 	display: block;
 	right: 50%;
-	margin: 0px 10px;
-	padding: 10px 10px;
+	margin: 5px 0px;
+	padding: 10px 0px;
 
 }
 
@@ -58,6 +61,7 @@
 	border: 1px solid black;
 	height: 700px;
 	padding: 30px 0px;
+	min-width: 830px;
 }
 
 #inputCarousel .item {
@@ -94,6 +98,8 @@
 	min-height: 600px;
 }
 
+/* combo data */
+
 #charImg {
 	width: 40%;
 	border: 1px solid red;
@@ -107,4 +113,5 @@
 	bottom: 10px;
 	right: 10px;
 	background-position: right bottom;
+	z-index: -1;
 }

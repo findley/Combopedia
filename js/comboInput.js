@@ -3,11 +3,6 @@ $(document).ready(function() {
 
 	$('#inputCarousel').carousel({
 		interval: false,
-		slid: function() {
-				if ($('#inputCarouselInner').children(':first').hasClass('active')) {
-					console.log('f');
-				}
-			}
 	}).on('slid', function() {
 		$('.stage').removeClass('active');
 		if ($('#inputCarouselInner').children(':first').hasClass('active')) {
@@ -25,8 +20,19 @@ $(document).ready(function() {
 		}
 	});
 	
+	
 	// initialized to first slide
 	$('.carousel-control.left').hide();
 	
-
+	$('#comboDataProgress').click(function() {
+		$('#inputCarousel').carousel(0);
+	});
+	$('#moveInputProgress').click(function() {
+		$('#inputCarousel').carousel(1);
+	});
+	$('#confirmationProgress').click(function() {
+		$('#inputCarousel').carousel(2);
+	});
+	
+	
 });
