@@ -1,17 +1,16 @@
 #container-gamepad {
-	width: 530px;
-	height: 700px;
+	/* width: 450px; */
+	/* height: 700px; */
 	float: left;
 }
 
 #gamepad {
-	width: 530px;
-	height: 550px;
+	margin: 0 auto;
+	min-width: 450px;
+	/* height: 550px; */
+	overflow: auto;
 }
 
-#gamepad > div {
-	margin: 5px;
-}
 
 .knob {
 	background-image: url('../img/joystick/selected.png');
@@ -47,24 +46,24 @@
 
 #aimingCircle {
 	border: 3px solid black;
-	float: left;
+	float: right;
 	position: relative;
 }
 
 #buttonContainer {
-	margin: 0px;
-	float: left;
+	margin: 50px 0px 0px 10px;
+	float: right;
 	padding: 2px;
-	width: 200px;
+	width: 150px;
 	height: 300px;
 }
 
 .gpBtn {
 	float: left;
-	margin: 0px;
+	margin: 2px;
 	background-size: 100%;
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 }
 
 .gpBtn:hover {
@@ -155,19 +154,12 @@
 }
 
 
-#moveList {
-	position: relative;
-	width: 400px;
-	height: 550px;
-	float: left;
-}
 
 #moves {
 	list-style-type: none;
 }
 
 
-/* TODO: do not set this height, deal with float elements */
 .singleMove {
 	border: 1px solid #999;
 	margin: 10px;

@@ -65,12 +65,14 @@
 	background-color: #222;
 	max-width: 1024px;
 	margin: 0 auto;
+	overflow: auto;
 }
 
 #inputCarousel .item {
 	border: 1px solid red;
-	width: 80%;
-	margin: 20px 10%;
+	width: 90%;
+	margin: 20px auto;
+	height: 600px;
 }
 
 .carousel-indicators .active {
@@ -131,6 +133,58 @@
 	z-index: 0;
 }
 
-#btnPane button, #btnPane div {
+
+/* Move Input */
+
+
+
+
+#textMoveInput {
+	clear: both;
 	float: left;
+}
+
+#textMoveInput textarea {
+	resize: none;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#container-gamepad {
+	clear: both;
+}
+
+#moveList {
+	position: absolute;
+	height: 550px;
+	float: right;
+	right: 0px;
+}
+
+#previewMove {
+	margin: 0px;
+	padding-left: 0px;
+}
+
+.singleMove {
+	list-style-type: none;
+	margin: 0px;
+	height: 50px;
+}
+
+.singleMove.preview  .icon-trash{
+	display: none;
+}
+
+.singleMove.preview {
+	margin-bottom: 10px;
+	border: 3px solid black;
+}
+
+.moveText {
+	height: 30px;
+}
+
+.moveImg {
+	height: 30px;
 }
