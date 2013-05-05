@@ -5,20 +5,18 @@
 <title>Combopedia - Enter Your Combo</title>
 
 <!-- Load style sheets -->
-<link rel="stylesheet" type="text/css" href="gamepad-style.css" />
-<link rel="stylesheet" type="text/css" href="menu.css" />
-<link rel="stylesheet" type="text/css" href="common.css" />
+<link rel="stylesheet" type="text/css" href="css/gamepad-style.css" />
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 <!-- Load any supplemental Javascript libraries here -->
 
-
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui-1.10.2.custom.min.js"></script>
 
-
-<script type="text/javascript" src="main.js"></script>
-<script type="text/javascript" src="gamepad.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/gamepad.js"></script>
 </head>
 
 <body>
@@ -45,19 +43,21 @@
 
 <div class='container-fluid' id="pageContainer" style='padding-top:60px;'>
 	<div class='row-fluid'>
-				<div id="back" class="span1">
-					<a href="./comboForm.html">
-					 <button class="btn btn-large prev-page" type="button"><i class="icon-double-angle-left"></i></button>
-					</a>
-				</div>
-				<div id='container-gamepad'>
-				</div>
-				<div id="moveList">
-					<p>Combo Moves</p>
-					<ul id="moves">
-					</ul>
-					<button onclick="$(location).attr('href','./menu.html');" class = "btn btn-large" style="position:absolute;bottom:10px;right:10px;overflow:hidden;">Submit Combo</button>
-				</div>
+		<div id="back" class="span1">
+			<a href="./comboForm.html">
+			 <button class="btn btn-large prev-page" type="button"><i class="icon-double-angle-left"></i></button>
+			</a>
+		</div>
+		<div id='container-gamepad'>
+		</div>
+		<div id="moveList">
+			<p>Combo Moves</p>
+			<ul id="moves">
+			</ul>
+			<a href="menu.html">
+			<button class = "btn btn-large" style="position:absolute;bottom:10px;right:10px;overflow:hidden;">Submit Combo</button>
+			</a>
+		</div>
 	</div>
 </div>
 
