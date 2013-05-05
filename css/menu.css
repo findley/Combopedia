@@ -147,10 +147,11 @@ table{
 }
 
 #sidebar-nav .active .icon-angle-left {
-	display: inline;
+	display: none;
 	float: right;
 	color: white;
 	font-size: 1.2em;
+
 }
 
 .char-port {

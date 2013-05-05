@@ -1,14 +1,22 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>Combopedia</title>
-<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 <script type="text/javascript" src="external_js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="external_js/jquery-ui-1.10.2.custom.min.js"></script>
 <script type="text/javascript" src="external_js/jquery.tablesorter/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/fillerDiscussion.js"></script>
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
 </head>
 
 <body>
@@ -25,17 +33,53 @@
 			  </button>
 			  <a class="brand" href="./menu.html"><img src="img/logo/logo.png" style="max-height: 25px;"/></a>
 			  <div class="nav-collapse collapse">
-				<form class="navbar-form pull-right">
-				  <input class "span2" type="text" placeholder="Email">
-				  <input class "span2" type="password" placeholder="Password">
+				<form class="navbar-form pull-right" id='loginForm'>
+				  <input class="span2" type="text" placeholder="Email">
+				  <input class="span2" type="password" placeholder="Password">
 				  <button type="submit" class="btn">Sign in</button>
 				</form>
 			  </div><!--/.nav-collapse -->
 			</div>
 		</div>
 	</div>
+	
+	<!-- Modal -->
+	<div class="modal hide fade" id='loginModal'>
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Sign In</h3>
+		
+   	  </div>
+	  <div class="modal-body">
+		<form id='existingUsers'>
+		  <fieldset>
+			<legend>Existing Users</legend>
+			<label>Username</label>
+			<input type="text" placeholder="joe123" id="loginUsername">
+			<label>Password</label>
+			<input type="text" placeholder="joe123" id="loginPassword">
+			<button type="submit" class="btn btn-primary">Login</button>
+		  </fieldset>
+		</form>
+		
+		<form id='signup'>
+		  <fieldset>
+			<legend>New Users</legend>
+			<label>Username</label>
+			<input type="text" placeholder="joe123" id="newUsername">
+			<label>Password</label>
+			<input type="text" placeholder="joe123" id="newPassword">
+			<label>Password Confirmation</label>
+			<input type="text" placeholder="joe123" id="newPassword2">
+			<button type="submit" class="btn btn-primary">Signup</button>
+		  </fieldset>
+		</form>
+		
+	  </div>
 
-	<div class="container-fluid" id="fillerComboPageContainer">
+	</div>
+
+	<div class="container container-fluid" id="fillerComboPageContainer">
 		<div class="row-fluid">
 			<div class="span10 offset1 topbar">
 				<div class="span1">

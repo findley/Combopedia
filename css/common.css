@@ -5,3 +5,32 @@
 .prev-page > i {
 	font-size: 30px;
 }
+
+#loginModal {
+	padding: 0px;
+}
+
+#loginModal .btn {
+	display: block;
+}
+
+#existingUsers, #signup {
+	float: left;
+	padding: 20px;
+	margin: 5px;
+	background-color: #eee;
+	width: 40%;
+}
+
+.modal-header {
+	margin-left: 20px;
+}
+
+body {
+  padding-top: 60px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}

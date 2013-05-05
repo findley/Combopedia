@@ -26,10 +26,13 @@
 <script type="text/javascript" src="js/comboForm.js"></script>
 <script type="text/javascript" src="js/gamepad.js"></script>
 
+<script type="text/javascript" src="js/login.js"></script>
+
 </head>
 
 <body>
 
+	<!-- Navigation -->
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -40,7 +43,7 @@
 			  </button>
 			  <a class="brand" href="./menu.html"><img src="img/logo/logo.png" style="max-height: 25px;"/></a>
 			  <div class="nav-collapse collapse">
-				<form class="navbar-form pull-right">
+				<form class="navbar-form pull-right" id='loginForm'>
 				  <input class="span2" type="text" placeholder="Email">
 				  <input class="span2" type="password" placeholder="Password">
 				  <button type="submit" class="btn">Sign in</button>
@@ -50,8 +53,44 @@
 		</div>
 	</div>
 	
+	<!-- Modal -->
+	<div class="modal hide fade" id='loginModal'>
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h3>Sign In</h3>
+		
+   	  </div>
+	  <div class="modal-body">
+		<form id='existingUsers'>
+		  <fieldset>
+			<legend>Existing Users</legend>
+			<label>Username</label>
+			<input type="text" placeholder="joe123" id="loginUsername">
+			<label>Password</label>
+			<input type="text" placeholder="joe123" id="loginPassword">
+			<button type="submit" class="btn btn-primary">Login</button>
+		  </fieldset>
+		</form>
+		
+		<form id='signup'>
+		  <fieldset>
+			<legend>New Users</legend>
+			<label>Username</label>
+			<input type="text" placeholder="joe123" id="newUsername">
+			<label>Password</label>
+			<input type="text" placeholder="joe123" id="newPassword">
+			<label>Password Confirmation</label>
+			<input type="text" placeholder="joe123" id="newPassword2">
+			<button type="submit" class="btn btn-primary">Signup</button>
+		  </fieldset>
+		</form>
+		
+	  </div>
+
+	</div>
 	
-<div class='container-fluid' id="pageContainer" style='padding-top:60px;'>
+	
+<div class='container-fluid' id="pageContainer">
 	<div class='row-fluid'>
 		
 		<div class="span12" id="inputProgressWrapper">
