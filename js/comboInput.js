@@ -45,6 +45,7 @@ $(document).ready(function() {
 	var gp = new Gamepad();
 	$('#container-gamepad').append(gp);
 	
+		
 	$('.loading').remove();
 	
 

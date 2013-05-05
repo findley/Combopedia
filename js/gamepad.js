@@ -38,34 +38,42 @@ var Gamepad = function() {
 	                .attr('id','topPane')
 	                .css({'clear': 'both', 'overflow' : 'hidden', 'text-align': 'center'});
         	
-	var clearMoveBtn = function() {
-		var btn = $('<button id="clearMove" class = "btn btn-large btn-danger">').text("Clear Move");
-		btn.click(function() {
-            resetGamepad()
-		});
-		return btn;
-	}
+	// var clearMoveBtn = function() {
+		// var btn = $('<button id="clearMove" class = "btn btn-large btn-danger">').text("Clear Move");
+		// btn.click(function() {
+            // resetGamepad()
+		// });
+		// return btn;
+	// }
 
-    var numImage = function() {
-        return $('<div id="numImage"><img class="img-polaroid" /></div>');
-    }
-    
-    var btnImage = function() {
-        return $('<div id="btnImage"><img class="img-polaroid" /></div>');
-    }
-    
-	var addMoveBtn = function() {
-		var btn = $('<button id="addMove" class = "btn btn-large btn-primary">').text("Add to Combo");
-		btn.click(function() {
-			addMove(Gamepad.inputQueue);
-		});
-		return btn;
-	}
+	$('#clearMove').click(function() {
+		resetGamepad();
+	});
 	
-	topPane.append(new clearMoveBtn());
-	topPane.append(new numImage());
-	topPane.append(new btnImage());
-	topPane.append(new addMoveBtn());
+    // var numImage = function() {
+        // return $('<div id="numImage"><img class="img-polaroid" /></div>');
+    // }
+    
+    // var btnImage = function() {
+        // return $('<div id="btnImage"><img class="img-polaroid" /></div>');
+    // }
+    
+	// var addMoveBtn = function() {
+		// var btn = $('<button id="addMove" class = "btn btn-large btn-primary">').text("Add to Combo");
+		// btn.click(function() {
+			// addMove(Gamepad.inputQueue);
+		// });
+		// return btn;
+	// }
+	
+	$('#addMove').click(function() {
+		addMove(Gamepad.inputQueue);
+	});
+	
+	// topPane.append(new clearMoveBtn());
+	// topPane.append(new numImage());
+	// topPane.append(new btnImage());
+	// topPane.append(new addMoveBtn());
 	
 	// The joystick controls of the gamepad
 	var AIMING_CIRCLE_WIDTH = 300;
@@ -251,26 +259,16 @@ var Gamepad = function() {
 	};	
 
 	// button inputs
-	var BTNCNTDIM = [250, 300];
-	var buttonContainer = $('<div>')
-							.attr('id', 'buttonContainer')
-							.css({
-								'width': BTNCNTDIM[0],
-								'height': BTNCNTDIM[1],
-							});
+	var buttonContainer = $('<div>').attr('id', 'buttonContainer');
 							
-	
+							
 	var BTNDIM = [100, 100];
 	var gpBtn = function(val) {
 		var btn = 
 			$('<div>')
 			.attr('id', 'btn' + val)
 			.attr('val', val)
-			.addClass('gpBtn')
-			.css({
-				'width': BTNDIM[0],
-				'height': BTNDIM[1],
-			});
+			.addClass('gpBtn');
 		
 		btn.mousedown(function() {
 			btn.toggleClass('active');
@@ -291,31 +289,31 @@ var Gamepad = function() {
 	buttonContainer.append(new gpBtn('D'));
 	
 	/* Feedback */
-	var gpFeedback = $('<div id="gpFeedback">');
 
+	$('#textMoveInput').on('keyup', function() {
+		parseTextInput();
+	});
 	
 	var JoystickFeedback = function() {
 		var joystickFeedback = $('<textarea id="joystickFeedback">')
 								.css({
 								});
-		//TODO: error handling!
-		joystickFeedback.on('keyup', function() {
-    		updateFromBoxes();
-		});
+		// joystickFeedback.on('keyup', function() {
+    		// updateFromBoxes();
+		// });
 		return joystickFeedback;
 	}
 
-		gpFeedback.append(new JoystickFeedback());
+		// gpFeedback.append(new JoystickFeedback());
 	
 	var BtnFeedback = function() {
 		var btnFeedback = $('<div id="btnFeedback">')
 							.css({
-								'width': BTNCNTDIM[0],
 							});
 		return btnFeedback;
 	};
 	
-	gpFeedback.append(new BtnFeedback());
+	// gpFeedback.append(new BtnFeedback());
 	
 	
 	// Code for being able to add single moves
@@ -405,18 +403,19 @@ var Gamepad = function() {
 		$('#btnFeedback').text('');
 		Knob.position($('#knob'), 5);
 		$('position.active').removeClass('active');
+		$('gpBtn.active').removeClass('active');
 		updateFromInternal();
 	}
 
 	// place the components in the gamepad
-	gamepad.append(topPane);
+	//gamepad.append(topPane);
 	gamepad.append(aimingCircle);
 	gamepad.append(buttonContainer);
 	aimingCircle.append(knob);
 	for (var i = 1; i <10; i++) {
 		aimingCircle.append(new Position(i));
 	}	
-	gamepad.append(gpFeedback);
+	// gamepad.append(gpFeedback);
 
 
 
@@ -430,8 +429,10 @@ var Gamepad = function() {
 			btns = Gamepad.btnSel;		
 		var nextMoves = validNext(nums);
 
-        $('#joystickFeedback').val(nums);
-		$('#btnFeedback').text(btns);
+        // $('#joystickFeedback').val(nums);
+		// $('#btnFeedback').text(btns);
+
+		$('#textMoveInput > textarea').val(nums + btns);
 		
     	for (var i = 1; i <10; i++) {
             $("#position-" + i).removeClass('active');
@@ -500,7 +501,58 @@ var Gamepad = function() {
         };
 	};
 	
-    	gamepad.ready(function(){resetGamepad();} );
+	var parseTextInput = function() {
+		var intRegex = /[1-9]/;
+		var letterRegex = /[a-dA-D]/;
+		var inp = $('#textMoveInput > textarea').val().trim().split("");
+		var joystickQueue = [];
+		var btnQueue = [];
+		var btnQueueUnique = [];
+		var idx = 0;
+		// parse numbers until you reach a letter or nondelimiter
+		
+		$.each(inp, function(i, v) {
+			console.log(v);
+			if (v == ' ' || v == ',') 
+				return true; // continue
+			if(intRegex.test(v)) {
+				joystickQueue.push(parseInt(v));
+			} else {
+				idx = i;
+				return false; //  break
+			}
+		});
+		console.log(joystickQueue);
+		Gamepad.inputQueue = joystickQueue;
+		
+		// parse letters until you reach a non-letter		
+		$.each(inp.slice(idx), function(i, v) {
+			if (v == ' ' || v == ',') 
+				return true; // continue
+			if(letterRegex.test(v)) {
+				btnQueue.push(v);
+			} else {
+				return false; // break
+			}
+		});
+
+		// sort and remove duplicates
+		btnQueue.sort();
+
+		$.each(btnQueue, function(idx, elt){
+			if($.inArray(elt, btnQueueUnique) === -1) btnQueueUnique.push(elt);
+		});
+		console.log(btnQueueUnique);
+		
+		
+        var num = Gamepad.inputQueue[joystickQueue.length-1];			
+		if (num!=undefined && num.length > 0 && 0 <= parseInt(num) && parseInt(num) <= 9)
+			Knob.position($('#knob'), num);
+			
+		updateFromInternal();
+	};
+	
+    gamepad.ready(function(){resetGamepad();} );
 	
 	return gamepad;
 }
