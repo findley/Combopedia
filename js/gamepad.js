@@ -402,8 +402,8 @@ var Gamepad = function() {
 		Gamepad.btnSel = '';
 		$('#btnFeedback').text('');
 		Knob.position($('#knob'), 5);
-		$('position.active').removeClass('active');
-		$('gpBtn.active').removeClass('active');
+		$('.position.active').removeClass('active');
+		$('.gpBtn.active').removeClass('active');
 		updateFromInternal();
 	}
 
