@@ -1,0 +1,110 @@
+/* Breadcrumbs */
+
+
+#inputProgress {
+	padding-top: 10px;
+	height: 100px;
+	text-align: center;
+	list-style-type: none;
+	margin: 0px;
+	position: relative;
+	float: left; 
+	display: block;
+	left: 50%;
+}
+#inputProgress li {
+	position: relative;
+	text-align: center;
+	font-size: 3em;
+	 float: left;
+	display: block;
+	right: 50%;
+	margin: 0px 10px;
+	padding: 10px 10px;
+
+}
+
+#inputProgress li.stage {
+	border-bottom: 3px solid #ccc;
+	color: #ccc;
+}
+
+#inputProgress li.active {
+	border-color: black;
+	color: black;
+}
+
+#inputProgress span {
+	font-size: 10px;
+	text-align: center;
+	margin: 10px auto 5px auto;
+	display: block;
+}
+
+#inputProgress .incomplete span {
+	color: red;
+}
+
+#inputProgress li.arrow {
+	margin: 0px;
+	padding: 0px;
+	color: #ccc;
+}
+
+
+/* Carousel */
+
+#inputCarousel {
+	border: 1px solid black;
+	height: 700px;
+	padding: 30px 0px;
+}
+
+#inputCarousel .item {
+	border: 1px solid red;
+	width: 80%;
+	margin: 20px 10%;
+}
+
+.carousel-indicators .active {
+	background-color: #000;
+}
+.carousel-indicators li {
+	background-color: #ccc;
+}
+
+#inputCarousel h2 {
+	text-align: center;
+}
+
+.carousel-control.left {
+	transition: none;
+}
+
+#metaDataForm {
+	width: 50%;
+	float: left;
+}
+
+#comboData {
+	overflow: hidden;
+}
+
+#inputCarousel .item {
+	min-height: 600px;
+}
+
+#charImg {
+	width: 40%;
+	border: 1px solid red;
+	float: left;
+	height: 500px;
+	background-image: url('../img/characters/aigis_full.png');
+	background-size: contain ;
+	background-repeat: no-repeat;
+	margin: 10px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	background-position: right bottom;
+}

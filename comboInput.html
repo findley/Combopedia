@@ -54,6 +54,28 @@
 <div class='container-fluid' id="pageContainer" style='padding-top:60px;'>
 	<div class='row-fluid'>
 		<div class="span1"></div>
+
+<!-- 		<div class="span10" id="breadcrumbsWrapper">
+			<div class="btn-group" id="breadcrumbs" data-toggle="buttons-radio">
+			  <button class="btn btn-large active">Combo Data <br /> <span class="inputProgress incomplete"> [Incomplete] </span></button>
+			  <button class="btn btn-large">Move Input <br /> <span class="inputProgress incomplete"> [Incomplete] </span></button>
+			  <button class="btn btn-primary btn-large">Confirmation <br /> <span>&nbsp;</span></button>
+			</div>
+		</div> -->
+		
+		<div class="span10" >
+			<ul id="inputProgress">
+				  <a href='#'><li class="active incomplete stage" id='comboDataProgress'>Combo Data <br /><span>INCOMPLETE</span></li></a>
+				  <li class="arrow"><i class="icon-angle-right"></i></li>
+				  <a href='#'><li class="incomplete stage" id='moveInputProgress'>Move Input <br /><span>INCOMPLETE</span> </li></a>
+				  <li class="arrow"><i class="icon-angle-right"></i></li>
+				  <a href='#'><li class="stage" id='confirmationProgress'> Confirmation <br /> <span> &nbsp; </span></li></a>
+			</ul>
+		</div>
+	</div>
+	<div class='row-fluid'>
+		<div class='span1'></div>
+		
 		<div id="inputCarousel" class="carousel slide span10">
 			<ol class="carousel-indicators">
 				<li data-target="#inputCarousel" data-slide-to="0" class="active"></li>
@@ -138,6 +160,8 @@
 					</form>
 					
 					<div id="charImg"></div>
+					
+
 				
 				</div>
 				
@@ -167,6 +191,7 @@
 			<a class="carousel-control right" href="#inputCarousel" data-slide="next">&rsaquo;</a>
 		</div>
 		
+
 	</div>
 </div>
 
