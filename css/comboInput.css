@@ -100,6 +100,11 @@
 	background-color: #fff;
 }
 
+.loading {
+	font-size: 100px;
+	color: white;
+}
+
 /* combo data */
 
 #charImg {
@@ -116,3 +121,5 @@
 	background-position: right bottom;
 	z-index: 0;
 }
+
+

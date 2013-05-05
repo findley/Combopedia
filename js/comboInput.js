@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 	$('#inputCarousel').carousel({
 		interval: false,
 	}).on('slid', function() {
@@ -19,7 +18,6 @@ $(document).ready(function() {
 			$('#moveInputProgress').addClass('active');
 		}
 	});
-	
 	
 	// initialized to first slide
 	$('.carousel-control.left').hide();
@@ -41,4 +39,15 @@ $(document).ready(function() {
 		var firstName = $('#charSelect').val().split(' ')[0].toLowerCase();
 		$('#charImg').css('background-image', 'url("img/characters/' + firstName + '_full.png")');
 	});
+	
+	
+	// gamepad
+	var gp = new Gamepad();
+	$('#container-gamepad').append(gp);
+	
+	$('.loading').remove();
+	
+
+	
+	
 });

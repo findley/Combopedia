@@ -33,9 +33,6 @@ var Gamepad = function() {
 						'padding': 10,
 					});
 	
-	
-
-    
 	// The buttons
 	var topPane = $('<div>')
 	                .attr('id','topPane')
@@ -406,8 +403,8 @@ var Gamepad = function() {
 		$('#joystickFeedback').val('');
 		Gamepad.btnSel = '';
 		$('#btnFeedback').text('');
-		Knob.position(knob, 5);
-		$('.active').removeClass('active');
+		Knob.position($('#knob'), 5);
+		$('position.active').removeClass('active');
 		updateFromInternal();
 	}
 
@@ -495,7 +492,7 @@ var Gamepad = function() {
             //place knob
             var num = Gamepad.inputQueue[Gamepad.inputQueue.length-1];			
             if (num.length > 0 && 0 <= parseInt(num) && parseInt(num) <= 9)
-                Knob.position(knob, num);
+                Knob.position($('#knob'), num);
                 
             updateFromInternal();
         }

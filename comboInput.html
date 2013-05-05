@@ -22,9 +22,9 @@
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="js/gamepad.js"></script>
 <script type="text/javascript" src="js/comboInput.js"></script>
 <script type="text/javascript" src="js/comboForm.js"></script>
+<script type="text/javascript" src="js/gamepad.js"></script>
 
 </head>
 
@@ -54,14 +54,6 @@
 <div class='container-fluid' id="pageContainer" style='padding-top:60px;'>
 	<div class='row-fluid'>
 		<div class="span1"></div>
-
-<!-- 		<div class="span10" id="breadcrumbsWrapper">
-			<div class="btn-group" id="breadcrumbs" data-toggle="buttons-radio">
-			  <button class="btn btn-large active">Combo Data <br /> <span class="inputProgress incomplete"> [Incomplete] </span></button>
-			  <button class="btn btn-large">Move Input <br /> <span class="inputProgress incomplete"> [Incomplete] </span></button>
-			  <button class="btn btn-primary btn-large">Confirmation <br /> <span>&nbsp;</span></button>
-			</div>
-		</div> -->
 		
 		<div class="span10" id="inputProgressWrapper">
 			<ul id="inputProgress">
@@ -161,18 +153,24 @@
 					
 					<div id="charImg"></div>
 					
-
+					<!-- <div class="loading"><i class="icon-spinning icon-spin"></i></div> -->
 				
 				</div>
 				
 				<!-- Move Input -->
 				<div class="item" id="moveInput">
 					<h2>Move Input</h2>
-					<h2>Move Input</h2>
-					<h2>Move Input</h2>
-					<h2>Move Input</h2>
-					<h2>Move Input</h2><h2>Move Input</h2>
-
+					<div id='container-gamepad'>
+					</div>
+					<div id="moveList">
+						<p>Combo Moves</p>
+						<ul id="moves">
+						</ul>
+						<a href="menu.html">
+						<button class = "btn btn-large" style="position:absolute;bottom:10px;right:10px;overflow:hidden;">Submit Combo</button>
+						</a>
+					</div>
+					<!-- <div class="loading"><i class="icon-spinning icon-spin"></i></div> -->
 				</div>
 				
 				<!-- Preview/Confirm Submission -->
@@ -182,7 +180,7 @@
 					<h2>Confirmation</h2>
 					<h2>Confirmation</h2>
 					<h2>Confirmation</h2>
-				
+					<!-- <div class="loading"><i class="icon-spinning icon-spin"></i></div> -->
 				</div>
 			<!-- Carousel nav -->
 			
@@ -191,9 +189,10 @@
 			<a class="carousel-control right" href="#inputCarousel" data-slide="next">&rsaquo;</a>
 		</div>
 		
-
+		
 	</div>
 </div>
+
 
 </body>
 </html>
