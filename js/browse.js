@@ -9,6 +9,10 @@ $(document).ready(function() {
 
 	});
 
+	$('.side').each(function(i, v) {
+		$(v).find('p').append('<i class="pull-right icon-angle-left">');
+	});
+	
 	$(".side").click(function() {
 		$("#"+prevHighlight).removeClass('active');
 		$("#"+this.id).addClass('active');
@@ -194,7 +198,6 @@ ComboData.fillComboData = function(charac) {
 						width: 40,
 						height: 40,
 					});
-					console.log($(portrait).attr('src'));
 					elt.append(portrait);
 					elt.append($('<p>').text(combo.character));
 					dataRow.append(elt);

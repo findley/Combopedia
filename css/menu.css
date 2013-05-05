@@ -120,9 +120,13 @@ table{
 	height: 20px;
 }
 
+
 .side p {
 	height: 40px;
 	padding: 0px 5px;
+	vertical-align: middle;
+	
+
 }
 
 .side, .side > p {
@@ -138,6 +142,17 @@ table{
 	margin-right: 10px;
 }
 
+#sidebar-nav .icon-angle-left {
+	display:  none;
+}
+
+#sidebar-nav .active .icon-angle-left {
+	display: inline;
+	float: right;
+	color: white;
+	font-size: 1.2em;
+}
+
 .char-port {
 	border: 1px solid gray;
 	background-color: white;
@@ -147,3 +162,4 @@ table{
 	min-width: 250px;
 	z-index: 10;
 }
+
