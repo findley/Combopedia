@@ -35,4 +35,10 @@ $(document).ready(function() {
 	});
 	
 	
+	
+	// combo data
+	$('#charSelect').change(function() {
+		var firstName = $('#charSelect').val().split(' ')[0].toLowerCase();
+		$('#charImg').css('background-image', 'url("img/characters/' + firstName + '_full.png")');
+	});
 });

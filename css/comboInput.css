@@ -101,8 +101,7 @@
 /* combo data */
 
 #charImg {
-	width: 40%;
-	border: 1px solid red;
+	width: 80%;
 	float: left;
 	height: 500px;
 	background-image: url('../img/characters/aigis_full.png');
