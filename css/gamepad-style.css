@@ -1,0 +1,326 @@
+#container-gamepad {
+	width: 700px;
+	height: 400px;
+	float: left;
+}
+
+#gamepad {
+	width: 650px;
+	height: 550px;
+}
+
+#gamepad > div {
+	margin: 15px;
+}
+
+.knob {
+	background-image: url('../img/joystick/selected.png');
+}
+
+.knob:hover {
+	cursor: pointer;
+}
+
+.position {
+	background-color: transparent;
+}
+
+.position:hover {
+	cursor: pointer;
+}
+
+.position.active {
+	/*background-color: yellow;*/
+}
+
+#pageContainer{
+	position:relative;
+	top:10%;
+}
+
+#moveList{
+	border: 1px solid black;
+	width:500;
+	height:450;
+	padding:10px;
+}
+
+#aimingCircle {
+	border: 3px solid black;
+	float: left;
+	position: relative;
+}
+
+#buttonContainer {
+/* 	width: 250px;
+	height: 300px; */
+	margin: 15px;
+	float: left;
+	padding: 5px;
+}
+
+.gpBtn {
+/* 	width: 100px;
+	height: 100px; */
+	float: left;
+	margin: 10px;
+	background-size: 100%;
+}
+
+.gpBtn:hover {
+	cursor: pointer;
+}
+
+#btnA {
+	background-image: url('../img/unselected/A.png');
+}
+
+#btnA.active {
+	background-image: url('../img/selected/A.png');
+}
+
+#btnB {
+	background-image: url('../img/unselected/B.png');
+}
+
+#btnB.active {
+	background-image: url('../img/selected/B.png');
+}
+
+#btnC {
+	background-image: url('../img/unselected/C.png');
+}
+
+#btnC.active {
+	background-image: url('../img/selected/C.png');
+}
+
+#btnD {
+	background-image: url('../img/unselected/D.png');
+}
+
+#btnD.active {
+	background-image: url('../img/selected/D.png');
+}
+
+#clearMove {
+	width: 30%;
+	float: left;
+}
+
+#addMove {
+	width: 30%;
+	float: right;
+}
+
+#gpFeedback {
+	clear: both;
+	width: 100%;
+	height: 100px;
+	padding: 1px;
+}
+
+#gpFeedback > textarea {
+	float: left;
+	margin: 15px;
+	height: 70px;
+}
+
+#gpFeedback > div {
+	margin: 15px;
+	height: 70px;
+	float: left;
+}
+
+#joystickFeedback {
+	border: 1px solid black;
+	padding: .5em;
+	font-size: 3em;
+	width: 200px;
+	resize:none;
+}
+
+#btnFeedback {
+	border: 1px solid black;
+}
+
+#numImage, #btnImage {
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 10px;
+	float: left;
+	border: 1px solid black;
+}
+
+
+#moveList {
+	position: relative;
+	width: 400px;
+	height: 550px;
+	float: left;
+}
+
+#moves {
+	list-style-type: none;
+}
+
+
+/* TODO: do not set this height, deal with float elements */
+.singleMove {
+	border: 1px solid #999;
+	margin: 10px;
+	padding: 5px;
+	height: 20px;
+	background-color: #ffe;
+}
+
+.singleMove:hover {
+	cursor: pointer;
+	border: 1px solid #C99;
+}
+
+.singleMove div {
+	display: inline-block;
+}
+
+.moveText {
+	float: left;
+	border: 1px solid black;
+	background-color: light-yellow;
+	padding: 0px 15px;
+}
+
+.moveImg {
+	position: absolute;
+	left: 45%;
+	height: 20px;
+	background-color: yellow;
+	border: 1px solid black;
+	padding: 0px 15px 0px 10px;
+}
+
+.moveImg img {
+	/* float: left; */
+	/* margin-left: 100px; */
+	width: 20px;
+	height: 20px;
+	/* background-color: yellow; */
+}
+
+.clear {
+	height: 1px;
+	clear: both;
+}
+
+
+/* Joystick positioning */
+
+#position-1 {
+	background-image: url('../img/unselected/1.png');
+}
+
+#position-1.active {
+	background-image: url('../img/selected/1.png');
+}
+
+#position-1.deactive {
+	background-image: url('../img/deactive/1.png');
+}
+
+#position-2 {
+	background-image: url('../img/unselected/2.png');
+}
+
+#position-2.active {
+	background-image: url('../img/selected/2.png');
+}
+
+#position-2.deactive {
+	background-image: url('../img/deactive/2.png');
+}
+
+#position-3 {
+	background-image: url('../img/unselected/3.png');
+}
+
+#position-3.active {
+	background-image: url('../img/selected/3.png');
+}
+
+#position-3.deactive {
+	background-image: url('../img/deactive/3.png');
+}
+
+#position-4 {
+	background-image: url('../img/unselected/4.png');
+}
+
+#position-4.active {
+	background-image: url('../img/selected/4.png');
+}
+
+#position-4.deactive {
+	background-image: url('../img/deactive/4.png');
+}
+
+#position-5 {
+	background-image: url('../img/unselected/5.png');
+}
+
+#position-5.active {
+	background-image: url('../img/selected/5.png');
+
+}
+#position-5.deactive {
+	background-image: url('../img/deactive/5.png');
+}
+
+#position-6 {
+	background-image: url('../img/unselected/6.png');
+}
+#position-6.active {
+	background-image: url('../img/selected/6.png');
+}
+#position-6.deactive {
+	background-image: url('../img/deactive/6.png');
+}
+
+#position-7 {
+	background-image: url('../img/unselected/7.png');
+
+}
+
+#position-7.active {
+	background-image: url('../img/selected/7.png');
+
+}
+#position-7.deactive {
+	background-image: url('../img/deactive/7.png');
+}
+
+#position-8 {
+	background-image: url('../img/unselected/8.png');
+
+}
+
+#position-8.active {
+	background-image: url('../img/selected/8.png');
+
+}
+
+#position-8.deactive {
+	background-image: url('../img/deactive/8.png');
+}
+
+#position-9 {
+	background-image: url('../img/unselected/9.png');
+}
+
+#position-9.active {
+	background-image: url('../img/selected/9.png');
+}
+
+#position-9.deactive {
+	background-image: url('../img/deactive/9.png');
+}

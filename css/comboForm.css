@@ -1,0 +1,30 @@
+#comboFormHeading{
+	font-size: 3em;
+	padding:20px;
+}
+
+.star-rating > i.icon-star-empty {
+	color: gray;
+}
+
+.star-rating > i.icon-star {
+	color: orange;
+}
+
+.star-rating {
+	cursor: pointer;
+}
+
+#fireRating.hover > i.icon-star {
+	color: #FC0;
+}
+
+#fireRating {
+	padding: 5px;
+	width: 6em;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 1.5em;
+	background-color: white;
+}
+
