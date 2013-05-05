@@ -184,6 +184,11 @@
 	display: inline-block;
 }
 
+.singleMove.delHover {
+	background-color: #FF6363;
+	border: 2px solid red;
+}
+
 .moveText {
 	float: left;
 	border: 1px solid black;

@@ -325,6 +325,17 @@ var Gamepad = function() {
 	
 	$('#moves').sortable({
 		cursor: 'move',
+		containment: '#moveList',
+	}).css({
+		padding: 0,
+		margin: 0,
+	
+	});
+	
+	$("#moves").on("click", '.singleMove', function (e){
+		if(e.target.className=="pull-right icon-trash"){
+			$(this).closest('li').remove();
+		} 
 	});
 
 
@@ -340,7 +351,23 @@ var Gamepad = function() {
 		if (VALID_JOYSTICK.indexOf(nums) == -1)
 		    return;
 		
-		var move = $('<li class="singleMove"><i class="pull-right icon-trash"></i></li>');
+		var move = $('<li class="singleMove"></li>');
+		move.css({
+			margin: 0,
+		});
+		var trash = $('<i class="pull-right icon-trash del-move">');
+		move.append(trash);
+
+		
+		trash.hover(
+			function() {
+				$($(this).closest('li')).addClass('delHover');
+				console.log('h');
+			},
+			function() {
+				$($(this).closest('li')).removeClass('delHover');		
+			}
+		);
 		
 		var text = $('<div>').addClass('moveText').text(nums + btns);
 		var img = $('<div>').addClass('moveImg');

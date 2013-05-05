@@ -169,7 +169,7 @@ ComboData.fillComboData = function(charac) {
 		for (var j = 0; j < ComboData.attributes.length; j++) {
 			var attribute = ComboData.attributes[j];
 
-			var firstName = combo["character"].split(" ")[0];
+			var firstName = combo.character.split(" ")[0];
 			if(charac=="allchars" || charac==firstName){
 				if(attribute=="combo"){
 					dataRow.append(convertToPicture(combo["combo"]));
@@ -186,7 +186,20 @@ ComboData.fillComboData = function(charac) {
 					}
 					elem = elem + "</td>";
 					dataRow.append($(elem));
-				}else{
+				} else if(attribute == "character") {
+					elt = $('<td>');
+					var portrait = $('<img>').addClass('char-port img-rounded');
+					portrait.attr('src', 'img/characters/' + firstName.toLowerCase() + '.png');
+					portrait.css({
+						width: 40,
+						height: 40,
+					});
+					console.log($(portrait).attr('src'));
+					elt.append(portrait);
+					elt.append($('<p>').text(combo.character));
+					dataRow.append(elt);
+				
+				} else {
 					dataRow.append($('<td>').text(combo[attribute]));
 				}
 			}

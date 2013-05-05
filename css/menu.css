@@ -2,6 +2,10 @@ table{
 	border-collapse: collapse;
 }
 
+#data {
+	min-width: 480px;
+}
+
 #data tbody tr:hover td, #data tbody tr:hover th {
     background-color: #FFFF99;
 }
@@ -27,6 +31,11 @@ table{
 
 #data{
 	width:100%;
+}
+
+#data .char-port {
+	float: left;
+	margin-right: 5px;
 }
 
 .comboCol{
@@ -88,14 +97,38 @@ table{
 	padding:10px;
 }
 
+
+/* Sidebar */
+
+#sidebar-nav {
+	padding: 20px 5px;
+}
+
+#sidebar-nav li {
+	border-bottom: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	background-color: #eee;
+}
+
+#allchars {
+	background-color: white;
+	border-top: 1px solid #ddd;
+}
+
+#allchars p {
+	height: 20px;
+}
+
 .side p {
 	height: 40px;
+	padding: 0px 5px;
 }
 
 .side, .side > p {
 	overflow: hidden;
 	font-size: 1.2em;
-	margin: 5px;
+	margin: 0px;
 }
 
 
