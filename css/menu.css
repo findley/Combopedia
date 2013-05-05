@@ -87,3 +87,30 @@ table{
 #fillerMetadata div{
 	padding:10px;
 }
+
+.side p {
+	height: 40px;
+}
+
+.side, .side > p {
+	overflow: hidden;
+	font-size: 1.2em;
+	margin: 5px;
+}
+
+
+.side img {
+	float: left;
+	display: inline;
+	margin-right: 10px;
+}
+
+.char-port {
+	border: 1px solid gray;
+	background-color: white;
+}
+
+#sidebar-nav {
+	min-width: 250px;
+	z-index: 10;
+}
