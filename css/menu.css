@@ -124,9 +124,14 @@ table{
 .side p {
 	height: 40px;
 	padding: 0px 5px;
-	vertical-align: middle;
-	
+}
 
+.side div {
+  height: 60px;
+}
+
+.side div div {
+  float: left;
 }
 
 .side, .side > p {
@@ -135,12 +140,19 @@ table{
 	margin: 0px;
 }
 
+.side span {
+  display: inline-block;
+  float: left;
+  padding-top: 10px;
+}
+
 
 .side img {
 	float: left;
-	display: inline;
+	display: inline-block;
 	margin-right: 10px;
 }
+
 
 #sidebar-nav .icon-angle-left {
 	display:  none;
