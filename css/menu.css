@@ -48,6 +48,10 @@ table{
 	width:100%;
 }
 
+#addnewbutton{
+	background-color:red;
+}
+
 #topRow{
 	padding:30px;
 }
