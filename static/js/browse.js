@@ -209,7 +209,7 @@ ComboData.fillComboData = function(charac, search, query) {
 				} else if(attribute == "character") {
 					elt = $('<td>');
 					var portrait = $('<img>').addClass('char-port img-rounded');
-					portrait.attr('src', './static/img/characters/' + firstName.toLowerCase() + '.png'); portrait.css({
+					portrait.attr('src', '/static/img/characters/' + firstName.toLowerCase() + '.png'); portrait.css({
 						height: 40,
 					});
 					elt.append(portrait);
@@ -249,7 +249,7 @@ var dataRow = function() {
 var convertToPicture = function(listOfMoves){
 	imgMoves = $("<td class='comboCol'>");
 	for (var i = 0; i < listOfMoves.length; i++) {
-		imgMoves.append($("<img class='imgMoves' src='./static/img/moves/"+listOfMoves[i]+".png' />"));
+		imgMoves.append($("<img class='imgMoves' src='/static/img/moves/"+listOfMoves[i]+".png' />"));
 	}
 	imgMoves.append($("<p></p><span>"+listOfMoves+"</span>"));
 	return imgMoves;
