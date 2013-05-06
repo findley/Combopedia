@@ -51,12 +51,12 @@ $(document).ready(function() {
 			$('#charImg')
 			.removeClass('loading')
 			.empty()
-			.css('background-image', 'url("img/characters/' + firstName + '_full.png")');
+			.css('background-image', 'url("./static/img/characters/' + firstName + '_full.png")');
 		  $(this).fadeIn();
 		})
 		.error(function () {
 		})
-		 .attr('src', 'img/characters/' + firstName + '_full.png');
+		 .attr('src', './static/img/characters/' + firstName + '_full.png');
 	}
 	
 	// gamepad
