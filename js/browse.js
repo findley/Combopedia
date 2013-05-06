@@ -60,7 +60,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 150,
 			meterGain: 50,
 			meterDrain: 80,
-			difficulty: "1/5",
+			difficulty: 1,
 			favorite: false, 
 		},
 		{
@@ -71,7 +71,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 100,
 			meterGain: 90,
 			meterDrain: 30,
-			difficulty: "1/5",
+			difficulty: 1,
 			favorite: false,		
 		},
 		{
@@ -82,7 +82,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 240,
 			meterGain: 10,
 			meterDrain: 20,
-			difficulty: "2/5",
+			difficulty: 2,
 			favorite: false,		
 		},
 		{
@@ -93,7 +93,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 760,
 			meterGain: 0,
 			meterDrain: 90,
-			difficulty: "4/5",
+			difficulty: 4,
 			favorite: false,		
 		},
 		{
@@ -104,7 +104,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 90,
 			meterGain: 20,
 			meterDrain: 0,
-			difficulty: "1/5",
+			difficulty: 1,
 			favorite: false,		
 		},
 		{
@@ -115,7 +115,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 670,
 			meterGain: 5,
 			meterDrain: 40,
-			difficulty: "3/5",
+			difficulty: 3,
 			favorite: false,		
 		},
 		{
@@ -126,7 +126,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 650,
 			meterGain: 5,
 			meterDrain: 20,
-			difficulty: "4/5",
+			difficulty: 4,
 			favorite: false,		
 		},
 		{
@@ -137,7 +137,7 @@ ComboData.attributes = ['character', 'name', 'combo', 'type', 'damage', 'meterGa
 			damage: 980,
 			meterGain: 50,
 			meterDrain: 20,
-			difficulty: "5/5",
+			difficulty: 5,
 			favorite: false,		
 		},
 	];
