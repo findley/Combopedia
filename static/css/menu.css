@@ -48,6 +48,15 @@ table{
 	width:100%;
 }
 
+.input-append button.add-on {
+    height: inherit !important;
+}
+
+#advsearch{
+	display: none;
+	padding:5px;
+}
+
 #topRow{
 	padding:30px;
 }

@@ -1,3 +1,5 @@
+var numStars = 0;
+
 $(document).ready(function() {
 
 	prevHighlight = "allchars";
@@ -14,6 +16,150 @@ $(document).ready(function() {
 
 	});
 
+	$('#expanddiv').click(function(){
+		$('#advsearch').slideToggle('fast');
+		icon = $('#chevron').attr("class");
+		if (icon=="icon-chevron-up"){
+			$("#chevron").removeClass().addClass("icon-chevron-down");
+			$("#expanddiv").html(" Hide Advanced Search");
+		} else{
+			$("#chevron").removeClass().addClass("icon-chevron-up");
+			$("#expanddiv").html(" Show Advanced Search");
+		}
+	});
+
+	$('#charNameSearch').click(function (e) {
+		checkOtherFields("charNameSearch");
+		chartoSearch = $('#charNameSearch').val().toLowerCase();
+		if(chartoSearch!="all"){
+			$('#data tbody').children().each(function() {
+				chara = $(this).children().children()[1].innerHTML.toLowerCase();
+				if(chara!=chartoSearch){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$('#comboNameSearch').keyup(function (e) {
+		checkOtherFields("comboNameSearch");
+		ctoSearch = $('#comboNameSearch').val().toLowerCase();
+		if(ctoSearch!=""){
+			$('#data tbody').children().each(function() {
+				com = $(this).children()[1].innerHTML.toLowerCase();
+				if(com.indexOf(ctoSearch)==-1){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$('#typeSearch').click(function (e) {
+		checkOtherFields("typeSearch");
+		typetoSearch = $('#typeSearch').val().toLowerCase();
+		if(typetoSearch!="all"){
+			$('#data tbody').children().each(function() {
+				type = $(this).children()[3].innerHTML.toLowerCase();
+				if(type!=typetoSearch){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$("#fireRating i").click(function(e){
+		checkOtherFields("fireRating");
+		numStars = $(e.target)[0].className[0];
+		$('#data tbody').children().each(function() {
+			var tableNumStars = 0;
+			$(this).children().children().each(function(){
+				if($(this).attr("class")=="icon-star"){
+					tableNumStars++;
+				}
+			});
+			if(!eval(tableNumStars.toString()+$("#fireRatingPars").val()+numStars)){
+				$(this).hide();
+			}
+		});		
+	});
+
+	$("#damMin").keyup(function (e) {
+		checkOtherFields("damMin");
+		dammin = $('#damMin').val();
+		if(dammin!=""){
+			$('#data tbody').children().each(function() {
+				dam = $(this).children()[4].innerHTML;
+				if(parseInt(dammin)>parseInt(dam)){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$("#damMax").keyup(function (e) {
+		checkOtherFields("damMax");
+		dammax = $('#damMax').val();
+		if(dammax!=""){
+			$('#data tbody').children().each(function() {
+				dam = $(this).children()[4].innerHTML;
+				if(parseInt(dammax)<parseInt(dam)){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$("#gainMin").keyup(function (e) {
+		checkOtherFields("gainMin");
+		gainmin = $('#gainMin').val();
+		if(gainmin!=""){
+			$('#data tbody').children().each(function() {
+				gain = $(this).children()[5].innerHTML;
+				if(parseInt(gainmin)>parseInt(gain)){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$("#gainMax").keyup(function (e) {
+		checkOtherFields("gainMax");
+		gainmax = $('#gainMax').val();
+		if(gainmax!=""){
+			$('#data tbody').children().each(function() {
+				gain = $(this).children()[5].innerHTML;
+				if(parseInt(gainmax)<parseInt(gain)){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$("#drainMin").keyup(function (e) {
+		checkOtherFields("drainMin");
+		drainmin = $('#drainMin').val();
+		if(drainmin!=""){
+			$('#data tbody').children().each(function() {
+				drain = $(this).children()[6].innerHTML;
+				if(parseInt(drainmin)>parseInt(drain)){
+					$(this).hide();
+				}
+			});
+		}
+	});
+
+	$("#drainMax").keyup(function (e) {
+		checkOtherFields("gainMax");
+		drainmax = $('#gainMax').val();
+		if(drainmax!=""){
+			$('#data tbody').children().each(function() {
+				drain = $(this).children()[6].innerHTML;
+				if(parseInt(drainmax)<parseInt(drain)){
+					$(this).hide();
+				}
+			});
+		}
+	});
 
 	$(".side").click(function() {
 		$("#"+prevHighlight).removeClass('active');
@@ -41,7 +187,7 @@ $(document).ready(function() {
 
 	$("#data").on("click",'.linkToComboPage',function(e){
 		if(e.target.className!="icon-star" && e.target.className!="icon-star-empty" && e.target.className!="fav"){
-			$(location).attr('href',"./fillerComboPage.html");
+			$(location).attr('href',"/p4u/view/1");
 		}
 	});
 
@@ -190,7 +336,7 @@ ComboData.fillComboData = function(charac, search, query) {
 			var attribute = ComboData.attributes[j];
 
 			var firstName = combo.character.split(" ")[0];
-			if(charac=="allchars" || charac==firstName){
+			if(charac=="allchars" || charac==firstName || charac==combo["character"]){
 				if(attribute=="combo"){
 					dataRow.append(convertToPicture(combo["combo"]));
 				} else if(attribute=="favorite"){
@@ -253,4 +399,56 @@ var convertToPicture = function(listOfMoves){
 	}
 	imgMoves.append($("<p></p><span>"+listOfMoves+"</span>"));
 	return imgMoves;
+}
+
+var checkOtherFields = function(currentElem){
+	ComboData.initTable();
+	if(currentElem!="charNameSearch" && $("#charNameSearch").val()!="All"){
+		ComboData.fillComboData($("#charNameSearch").val());
+	} else{
+		ComboData.fillComboData();
+	}
+
+	if(currentElem!="fireRating" && numStars!=0){
+		$('#data tbody').children().each(function() {
+			var tableNumStars = 0;
+			$(this).children().children().each(function(){
+				if($(this).attr("class")=="icon-star"){
+					tableNumStars++;
+				}
+			});
+			if(!eval(tableNumStars.toString()+$("#fireRatingPars").val()+numStars.toString())){
+				$(this).hide();
+			}
+		});	
+	}
+
+	$('#data tbody').children().each(function() {
+		comboName = $(this).children()[1].innerHTML.toLowerCase();
+		type = $(this).children()[3].innerHTML.toLowerCase();
+		damage = $(this).children()[4].innerHTML;
+		metergain = $(this).children()[5].innerHTML;
+		meterdrain = $(this).children()[6].innerHTML;
+		if(currentElem!="comboNameSearch" && $("#comboNameSearch").val()!="" && 
+			comboName.indexOf($("#comboNameSearch").val().toLowerCase())==-1){
+			$(this).hide();
+		} else if(currentElem!="typeSearch" && $("#typeSearch").val()!="All" && 
+			$("#typeSearch").val().toLowerCase()!=type){
+			$(this).hide();
+		} else if(currentElem!="damMin" && $("#damMin").val()!="" && parseInt($("#damMin").val())>parseInt(damage)){
+			$(this).hide();
+		} else if(currentElem!="damMax" && $("#damMax").val()!="" && parseInt($("#damMax").val())<parseInt(damage)){
+			$(this).hide();
+		} else if(currentElem!="gainMin" && $("#gainMin").val()!="" && parseInt($("#gainMin").val())>parseInt(metergain)){
+			$(this).hide();
+		} else if(currentElem!="gainMax" && $("#gainMax").val()!="" && parseInt($("#gainMax").val())<parseInt(metergain)){
+			$(this).hide();
+		} else if(currentElem!="drainMin" && $("#drainMin").val()!="" && parseInt($("#drainMin").val())>parseInt(meterdrain)){
+			$(this).hide();
+		} else if(currentElem!="drainMax" && $("#drainMax").val()!="" && parseInt($("#drainMax").val())<parseInt(meterdrain)){
+			$(this).hide();
+		} else {
+
+		}
+	});
 }

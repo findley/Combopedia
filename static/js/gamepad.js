@@ -141,7 +141,7 @@ var Gamepad = function() {
 						},
 						'distance': 10,
 					})
-					.append($('<img src="./static/img/joystick/selected.png">'));
+					.append($('<img src="/static/img/joystick/selected.png">'));
 					
 		Knob.position = function(elt, positionNum) {
 			var knob = elt;
@@ -314,14 +314,14 @@ var Gamepad = function() {
 		var img = $('<div>').addClass('moveImg');
 		
 		if (nums.length > 0)
-			img.append($('<img>').attr('src', './static/img/moves/' + nums.trim() + '.png'));
+			img.append($('<img>').attr('src', '/static/img/moves/' + nums.trim() + '.png'));
 		else
-			img.append($('<img>').attr('src', './static/img/moves/5.png'));
+			img.append($('<img>').attr('src', '/static/img/moves/5.png'));
 			
 		if (btns.length > 0)		
-		    img.append($('<img>').attr('src', './static/img/moves/' + btns.trim() + '.png'));
+		    img.append($('<img>').attr('src', '/static/img/moves/' + btns.trim() + '.png'));
 		else
-		    img.append($('<img>').attr('src', './static/img/moves/none.png'));		
+		    img.append($('<img>').attr('src', '/static/img/moves/none.png'));		
 		
 		move.append(text);
 		move.append(img);
@@ -388,11 +388,11 @@ var Gamepad = function() {
     	if (VALID_JOYSTICK.indexOf(nums) >= 0) {
             if (nums.length > 0) {
 				var img = $('<img>');
-                $('#numImage').attr('src', './static/img/moves/' + nums.trim() + '.png');
+                $('#numImage').attr('src', '/static/img/moves/' + nums.trim() + '.png');
 				// $('#numImage').empty().append(img);
 			} else { 
 				var img = $('<img>');
-                img.attr('src', './static/img/moves/5.png');
+                img.attr('src', '/static/img/moves/5.png');
 				$('#numImage').empty().append(img);
 			}
             $('#numImage').css({'border-color' : 'black'});        
@@ -406,7 +406,7 @@ var Gamepad = function() {
 		if (VALID_BUTTON.indexOf(btns) >= 0) {
             if (btns.length > 0) {		
 				var img = $('<img>');
-                img.attr('src', './static/img/moves/' + btns.trim() + '.png');
+                img.attr('src', '/static/img/moves/' + btns.trim() + '.png');
 				$('#btnImage').empty().append(img);
 				
 				var eachBtn = btns.split('');
@@ -416,7 +416,7 @@ var Gamepad = function() {
 			}
             else {
 				var img = $('<img>');
-                $('#btnImage').attr('src', './static/img/moves/none.png');
+                $('#btnImage').attr('src', '/static/img/moves/none.png');
 				// $('#btnImage').empty().append(img);
 			}
             $('#btnImage').css({'border-color' : 'black'});

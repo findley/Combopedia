@@ -13,7 +13,7 @@
 
 
 .knob {
-	background-image: url('../img/joystick/selected.png');
+	background-image: url('./static/img/joystick/selected.png');
 }
 
 .knob:hover {
@@ -71,35 +71,35 @@
 }
 
 #btnA {
-	background-image: url('../img/unselected/A.png');
+	background-image: url('/static/img/unselected/A.png');
 }
 
 #btnA.active {
-	background-image: url('../img/selected/A.png');
+	background-image: url('/static/img/selected/A.png');
 }
 
 #btnB {
-	background-image: url('../img/unselected/B.png');
+	background-image: url('/static/img/unselected/B.png');
 }
 
 #btnB.active {
-	background-image: url('../img/selected/B.png');
+	background-image: url('/static/img/selected/B.png');
 }
 
 #btnC {
-	background-image: url('../img/unselected/C.png');
+	background-image: url('/static/img/unselected/C.png');
 }
 
 #btnC.active {
-	background-image: url('../img/selected/C.png');
+	background-image: url('/static/img/selected/C.png');
 }
 
 #btnD {
-	background-image: url('../img/unselected/D.png');
+	background-image: url('/static/img/unselected/D.png');
 }
 
 #btnD.active {
-	background-image: url('../img/selected/D.png');
+	background-image: url('/static/img/selected/D.png');
 }
 
 #clearMove {
@@ -215,110 +215,110 @@
 /* Joystick positioning */
 
 #position-1 {
-	background-image: url('../img/unselected/1.png');
+	background-image: url('/static/img/unselected/1.png');
 }
 
 #position-1.active {
-	background-image: url('../img/selected/1.png');
+	background-image: url('/static/img/selected/1.png');
 }
 
 #position-1.deactive {
-	background-image: url('../img/deactive/1.png');
+	background-image: url('/static/img/deactive/1.png');
 }
 
 #position-2 {
-	background-image: url('../img/unselected/2.png');
+	background-image: url('/static/img/unselected/2.png');
 }
 
 #position-2.active {
-	background-image: url('../img/selected/2.png');
+	background-image: url('/static/img/selected/2.png');
 }
 
 #position-2.deactive {
-	background-image: url('../img/deactive/2.png');
+	background-image: url('/static/img/deactive/2.png');
 }
 
 #position-3 {
-	background-image: url('../img/unselected/3.png');
+	background-image: url('/static/img/unselected/3.png');
 }
 
 #position-3.active {
-	background-image: url('../img/selected/3.png');
+	background-image: url('/static/img/selected/3.png');
 }
 
 #position-3.deactive {
-	background-image: url('../img/deactive/3.png');
+	background-image: url('/static/img/deactive/3.png');
 }
 
 #position-4 {
-	background-image: url('../img/unselected/4.png');
+	background-image: url('/static/img/unselected/4.png');
 }
 
 #position-4.active {
-	background-image: url('../img/selected/4.png');
+	background-image: url('/static/img/selected/4.png');
 }
 
 #position-4.deactive {
-	background-image: url('../img/deactive/4.png');
+	background-image: url('/static/img/deactive/4.png');
 }
 
 #position-5 {
-	background-image: url('../img/unselected/5.png');
+	background-image: url('/static/img/unselected/5.png');
 }
 
 #position-5.active {
-	background-image: url('../img/selected/5.png');
+	background-image: url('/static/img/selected/5.png');
 
 }
 #position-5.deactive {
-	background-image: url('../img/deactive/5.png');
+	background-image: url('/static/img/deactive/5.png');
 }
 
 #position-6 {
-	background-image: url('../img/unselected/6.png');
+	background-image: url('/static/img/unselected/6.png');
 }
 #position-6.active {
-	background-image: url('../img/selected/6.png');
+	background-image: url('/static/img/selected/6.png');
 }
 #position-6.deactive {
-	background-image: url('../img/deactive/6.png');
+	background-image: url('/static/img/deactive/6.png');
 }
 
 #position-7 {
-	background-image: url('../img/unselected/7.png');
+	background-image: url('/static/img/unselected/7.png');
 
 }
 
 #position-7.active {
-	background-image: url('../img/selected/7.png');
+	background-image: url('/static/img/selected/7.png');
 
 }
 #position-7.deactive {
-	background-image: url('../img/deactive/7.png');
+	background-image: url('/static/img/deactive/7.png');
 }
 
 #position-8 {
-	background-image: url('../img/unselected/8.png');
+	background-image: url('/static/img/unselected/8.png');
 
 }
 
 #position-8.active {
-	background-image: url('../img/selected/8.png');
+	background-image: url('/static/img/selected/8.png');
 
 }
 
 #position-8.deactive {
-	background-image: url('../img/deactive/8.png');
+	background-image: url('/static/img/deactive/8.png');
 }
 
 #position-9 {
-	background-image: url('../img/unselected/9.png');
+	background-image: url('/static/img/unselected/9.png');
 }
 
 #position-9.active {
-	background-image: url('../img/selected/9.png');
+	background-image: url('/static/img/selected/9.png');
 }
 
 #position-9.deactive {
-	background-image: url('../img/deactive/9.png');
+	background-image: url('/static/img/deactive/9.png');
 }

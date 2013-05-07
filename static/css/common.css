@@ -14,7 +14,7 @@
 	display: block;
 }
 
-#existingUsers, #signup {
+#existing_login, #signup {
 	float: left;
 	padding: 20px;
 	margin: 5px;
@@ -33,4 +33,9 @@ body {
   body {
     padding-top: 0px;
   }
+}
+
+#signup_error, #login_error {
+  color: red;
+  width: 100px;
 }
